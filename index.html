@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -107,19 +107,18 @@
       background-color: #fcd5ce;
       position: absolute;
       border: 2px solid #f69887;
-      bottom: 0; /* en lugar de top */
+      bottom: 0;
       left: 50%;
-      transform-origin: bottom center; /* cambia el origen de rotación */
+      transform-origin: bottom center;
       transform: translateX(-50%) rotateX(0deg);
       transition: transform 1s ease;
-      border-radius: 15px 15px 15px 15px; /* arriba redondeado en lugar de abajo */
+      border-radius: 15px 15px 15px 15px;
       z-index: 2;
     }
 
     .solapa-inferior.abierta {
       transform: translateX(-50%) rotateX(-180deg);
     }
-
 
     .contenido-carta {
       position: absolute;
@@ -132,6 +131,7 @@
       padding: 25px;
       box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
+      display: block;
     }
 
     .contenido-carta h2 {
@@ -160,7 +160,7 @@
       display: none;
       text-align: center;
       padding: 30px 20px;
-      z-index: 2;
+      z-index: 3;
       position: relative;
     }
 
@@ -169,6 +169,24 @@
       border-radius: 15px;
       margin-top: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilos video full screen */
+    #videoFullScreen {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #videoFullScreen video {
+      max-width: 100%;
+      max-height: 100%;
     }
 
     audio { display: none; }
@@ -196,7 +214,7 @@
         <h2>Feliz Día de la Novia 💙</h2>
         <p>Desde que llegaste a mi vida, cada día se siente como una canción bonita.<br />
         Gracias por este primer mes. Por cada serie, cada risa, y por ser tú.</p>
-        <button class="abrir-btn" onclick="mostrarContenido(event)"> aun hay más </button><br />
+        <button class="abrir-btn" onclick="mostrarVideo(event)"> aun hay más </button><br />
       </div>
     </div>
   </div>
@@ -226,41 +244,43 @@
 
     @keyframes brillo {
         0% { opacity: 0.2; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.5); }a
+        50% { opacity: 1; transform: scale(1.5); }
         100% { opacity: 0.2; transform: scale(1); }
     }
     </style>
 
     <div style="text-align: center; margin-top: 10px;">
-    <span class="destello">✨</span>
+      <span class="destello">✨</span>
     </div>
 
-
-    <!-- 🖼️ Foto de ustedes -->
+    <!-- 🖼️ Fotos -->
     <img src="pumpkin.jpeg" alt="Nosotros" /><br />
     <img src="smile.jpeg" alt="Nosotros" />
     <img src="us.jpeg" alt="Nosotros" />
 
     <!-- 🎧 Playlist -->
- 
     <h2 style="color: #333; margin-bottom: 10px;">🎧 Nuestra Playlist</h2>
-
     <p style="color: #555; font-size: 16px; line-height: 1.6;">
-        Si algún día me extrañas, recuerda que siempre vivirás en las canciones que me hacen pensar en ti. <br />
-        Cada nota, cada verso… es un pedacito de nosotros. 💞
+      Si algún día me extrañas, recuerda que siempre vivirás en las canciones que me hacen pensar en ti. <br />
+      Cada nota, cada verso… es un pedacito de nosotros. 💞
     </p>
 
     <a href="https://open.spotify.com/playlist/3oOknDxOiBcuV49e1BznGp?si=5cL-jiePRQaD0Q01SEOoVQ&pi=CAY8FjiATVq34&pt=914384605c716cee7a5919ee6ca96b6d" 
         target="_blank"
         style="display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 20px; background-color: #1DB954; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 16px; transition: background-color 0.3s ease;">
         <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 496 512" fill="white">
-            <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.7 365.3c-5.3 8.9-16.7 11.7-25.6 6.4-69.9-41.7-158-51.2-262.2-28.4-10.2 2.3-20.4-4.2-22.7-14.4s4.2-20.4 14.4-22.7c115.5-25.5 215.3-14.1 295.5 33.3 8.9 5.3 11.7 16.7 6.6 25.8zm35.3-70c-6.6 10.8-20.8 14.4-31.6 7.7-79.9-48.1-201.9-62.2-296.5-34.5-12 3.3-24.5-3.4-27.8-15.5-3.3-12 3.4-24.5 15.5-27.8 111.1-31 244.1-15.3 337.6 39.4 10.7 6.6 14.3 20.8 7.8 31.7zm2.5-74.5C360.5 181.4 228.7 165 114.6 198.6c-14 4.1-28.7-3.9-32.7-18s3.9-28.7 18-32.7c132.3-39.7 281.9-20.6 390.7 54.1 11.9 7.9 15.1 24 7.2 35.9-7.9 11.8-24 15-35.9 7.1z"/>
+            <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.7 365.3c-5.3 8.9-16.7 11.7-25.6 6.4-69.9-41.7-158-51.2-262.2-28.4-10.2 2.3-20.4-4.2-22.7-14.4s4.2-20.4 14.4-22.7c115.5-25.5 215.3-14.1 295.5 33.3 8.9 5.3 11.7 16.7 6.6 25.8zm35.3-70c-6.6 10.8-20.8 14.4-31.6 7.7-79.9-48.1-201.9-62.2-296.5-34.5-12 3.3-24.5-3.4-27.8-15.5-3.3-12 3.4-24.5 15.5-27.8 111.1-31 244.1-15.3 337.6 39.4 10.7 6.6 14.3 20.8 7.8 31.7zm2.5-74.5C360.5 181.4 228.7 165 114.6 198.6c-14 4.1-28.7-3.9-32.7-18s3.9-28.7 18-32.7c132.3-39.7 281.9-20.6 390.7 54.1 11.9 7.9 15.1 24 7.2 35.9-7.9 11.8-24 15-35.9 7.1"/>
         </svg>
         Canciones que me recuerdan a ti
     </a>
-
-
     <div style="margin-top: 20px; font-size: 22px;">🎶🌙✨</div>
+  </div>
+
+  <!-- Video fullscreen oculto -->
+  <div id="videoFullScreen">
+    <video id="videoPlayer" playsinline></video>
+  </div>
+
   <img src="calabaza.png" alt="Calabaza izquierda" class="calabaza izquierda">
 
   <script>
@@ -280,12 +300,36 @@
       }, 1600);
     }
 
-    function mostrarContenido(event) {
+    function mostrarVideo(event) {
       event.stopPropagation();
+
+      // Ocultar carta y corazones para que no molesten
       document.querySelector('.carta-container').style.display = 'none';
-      document.getElementById('contenido').style.display = 'block';
-      document.body.style.overflow = 'auto';
-      document.getElementById('musica')?.play();
+
+      // Ocultar corazones
+      document.querySelectorAll('.corazon').forEach(c => c.style.display = 'none');
+
+      // Mostrar el contenedor de video fullscreen
+      const videoContainer = document.getElementById('videoFullScreen');
+      const videoPlayer = document.getElementById('videoPlayer');
+
+      // Define la ruta de tu video aquí (puede ser relativa o absoluta)
+      videoPlayer.src = "YourName.mp4"; // <-- Cambia aquí al nombre o url real
+      videoPlayer.autoplay = true;
+      videoPlayer.controls = false;
+      videoPlayer.loop = false;
+      videoPlayer.muted = false;
+
+      videoContainer.style.display = "flex";
+
+      videoPlayer.play();
+
+      // Cuando termine el video, ocultar video y mostrar contenido
+      videoPlayer.onended = () => {
+        videoContainer.style.display = "none";
+        document.getElementById('contenido').style.display = 'block';
+        document.body.style.overflow = 'auto';
+      }
     }
   </script>
 </body>
