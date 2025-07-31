@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Feliz Día de la Novia 💙</title>
+  <title>A Mi Futura Esposa 💙</title>
   <link rel="icon" href="OIP.png" type="image/webp" />
   <style>
     * { box-sizing: border-box; }
@@ -190,7 +190,79 @@
       object-fit: cover;
     }
 
-    audio { display: none; }
+    .tarjetas-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .tarjeta {
+      width: 200px;
+      height: 260px;
+      perspective: 1000px;
+    }
+
+    .tarjeta-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .tarjeta:hover .tarjeta-inner {
+      transform: rotateY(180deg);
+    }
+
+    .tarjeta-front, .tarjeta-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .tarjeta-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    .tarjeta-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tarjeta-back {
+      background-color: #fcd5ce;
+      color: #333;
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .destello {
+        display: inline-block;
+        animation: brillo 2s infinite;
+        font-size: 1.5em;
+        color: gold;
+    }
+
+    @keyframes brillo {
+        0% { opacity: 0.2; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.5); }
+        100% { opacity: 0.2; transform: scale(1); }
+    }
   </style>
 </head>
 <body>
@@ -220,9 +292,9 @@
     </div>
   </div>
 
- <!-- 🎁 Contenido adicional -->
+ <!-- contenido  -->
   <div id="contenido">
-    <h2>¡Hola mi amor! 💕</h2>
+    <h2>¡Hola mi lucecita! 💕</h2>
     <p>
         Gracias por estar en mi vida.<br />
         Prometo seguir compartiendo canciones, abrazos y sueños contigo. 💫<br /><br />
@@ -234,46 +306,89 @@
         Te amo muchísimo, mi lucecita. Eres una persona maravillosa en mi vida. 💖
     </p>
 
-    <!-- ✨ Destello animado al final -->
-    <style>
-    .destello {
-        display: inline-block;
-        animation: brillo 2s infinite;
-        font-size: 1.5em;
-        color: gold;
-    }
-
-    @keyframes brillo {
-        0% { opacity: 0.2; transform: scale(1); }
-        50% { opacity: 1; transform: scale(1.5); }
-        100% { opacity: 0.2; transform: scale(1); }
-    }
-    </style>
 
     <div style="text-align: center; margin-top: 10px;">
       <span class="destello">✨</span>
     </div>
 
-    <!-- 🖼️ Fotos -->
-    <img src="pumpkin.jpeg" alt="Nosotros" /><br />
-    <img src="smile.jpeg" alt="Nosotros" />
-    <img src="us.jpeg" alt="Nosotros" />
+    <!-- 🖼️ Fotos --><div class="tarjetas-container">
+    <div class="tarjeta">
+      <div class="tarjeta-inner">
+        <div class="tarjeta-front">
+          <img src="pumpkin.jpeg" alt="Recuerdo 1">
+        </div>
+        <div class="tarjeta-back">
+          Siempre sonrio cuando veo tu carita por eso esta aca esta foto. ❤️
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="tarjeta-inner">
+        <div class="tarjeta-front">
+          <img src="smile.jpeg" alt="Recuerdo 2">
+        </div>
+        <div class="tarjeta-back">
+          Aquí empezó todo lo bonito entre nosotros, la primera vez que nos vimos pero no la primera en que supe que eras todo lo que queria. ✨
+        </div>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <div class="tarjeta-inner">
+        <div class="tarjeta-front">
+          <img src="us.jpeg" alt="Recuerdo 3">
+        </div>
+        <div class="tarjeta-back">
+          Se que esta es una foto hecha por IA pero aun asi un dia la cambiaremos por una de nosotros juntos y luego por una junto a Damian. 
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- 🎧 Playlist -->
     <h2 style="color: #333; margin-bottom: 10px;">🎧 Nuestra Playlist</h2>
     <p style="color: #555; font-size: 16px; line-height: 1.6;">
       Si algún día me extrañas, recuerda que siempre vivirás en las canciones que me hacen pensar en ti. <br />
-      Cada nota, cada verso… es un pedacito de nosotros. 💞
+      Cada nota, cada verso… es un pedacito de nosotros. <br />
+      (spotify no me deja ponerlas completas porque aja, pero te dejo la playlist que te hice)💞
     </p>
 
-    <a href="https://open.spotify.com/playlist/3oOknDxOiBcuV49e1BznGp?si=5cL-jiePRQaD0Q01SEOoVQ&pi=CAY8FjiATVq34&pt=914384605c716cee7a5919ee6ca96b6d" 
-        target="_blank"
-        style="display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 20px; background-color: #1DB954; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 16px; transition: background-color 0.3s ease;">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 496 512" fill="white">
-            <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.7 365.3c-5.3 8.9-16.7 11.7-25.6 6.4-69.9-41.7-158-51.2-262.2-28.4-10.2 2.3-20.4-4.2-22.7-14.4s4.2-20.4 14.4-22.7c115.5-25.5 215.3-14.1 295.5 33.3 8.9 5.3 11.7 16.7 6.6 25.8zm35.3-70c-6.6 10.8-20.8 14.4-31.6 7.7-79.9-48.1-201.9-62.2-296.5-34.5-12 3.3-24.5-3.4-27.8-15.5-3.3-12 3.4-24.5 15.5-27.8 111.1-31 244.1-15.3 337.6 39.4 10.7 6.6 14.3 20.8 7.8 31.7zm2.5-74.5C360.5 181.4 228.7 165 114.6 198.6c-14 4.1-28.7-3.9-32.7-18s3.9-28.7 18-32.7c132.3-39.7 281.9-20.6 390.7 54.1 11.9 7.9 15.1 24 7.2 35.9-7.9 11.8-24 15-35.9 7.1"/>
+    <!-- Enlace para abrir la playlist en Spotify -->
+    <p style="margin-top: 10px; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      <a href="https://open.spotify.com/playlist/3oOknDxOiBcuV49e1BznGp" target="_blank"
+        style="
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: #1DB954;
+          font-weight: 700;
+          font-size: 18px;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        "
+        onmouseover="this.style.color='#14833b'"
+        onmouseout="this.style.color='#1DB954'"
+      >
+        <svg role="img" height="24" width="24" viewBox="0 0 496 512" fill="#1DB954" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.7 365.3c-5.3 8.9-16.7 11.7-25.6 6.4-69.9-41.7-158-51.2-262.2-28.4-10.2 2.3-20.4-4.2-22.7-14.4s4.2-20.4 14.4-22.7c115.5-25.5 215.3-14.1 295.5 33.3 8.9 5.3 11.7 16.7 6.6 25.8zm35.3-70c-6.6 10.8-20.8 14.4-31.6 7.7-79.9-48.1-201.9-62.2-296.5-34.5-12 3.3-24.5-3.4-27.8-15.5-3.3-12 3.4-24.5 15.5-27.8 111.1-31 244.1-15.3 337.6 39.4 10.7 6.6 14.3 20.8 7.8 31.7zm2.5-74.5C360.5 181.4 228.7 165 114.6 198.6c-14 4.1-28.7-3.9-32.7-18s3.9-28.7 18-32.7c132.3-39.7 281.9-20.6 390.7 54.1 11.9 7.9 15.1 24 7.2 35.9-7.9 11.8-24 15-35.9 7.1"/>
         </svg>
-        Canciones que me recuerdan a ti
-    </a>
+        Tu Playlist mi niña c:
+      </a>
+    </p>
+
+    <!-- Embed Spotify Playlist -->
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/3oOknDxOiBcuV49e1BznGp" 
+      width="100%" height="152" frameborder="0" 
+      allow="encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+
+    
+
+
+
     <div style="margin-top: 20px; font-size: 22px;">🎶🌙✨</div>
   </div>
 
@@ -307,8 +422,6 @@
       // Ocultar carta y corazones para que no molesten
       document.querySelector('.carta-container').style.display = 'none';
 
-      // Ocultar corazones
-      document.querySelectorAll('.corazon').forEach(c => c.style.display = 'none');
 
       // Mostrar el contenedor de video fullscreen
       const videoContainer = document.getElementById('videoFullScreen');
