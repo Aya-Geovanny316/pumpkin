@@ -177,7 +177,19 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
       user-select: none;
+      width: auto;
+      max-width: 100%;
+      box-sizing: border-box;
     }
+    
+    @media (max-width: 480px) {
+      .abrir-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%; /* botón toma todo el ancho en móvil */
+      }
+    }
+
 
     .abrir-btn:hover {
       background-color: #b73a3a;
