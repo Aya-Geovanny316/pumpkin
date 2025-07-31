@@ -59,6 +59,27 @@
       100% { transform: translateY(-10vh) rotate(45deg); }
     }
 
+    .spotify-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #1DB954;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .spotify-link:hover {
+      color: #14833b;
+    }
+
+    .spotify-icon {
+      width: 24px;
+      height: 24px;
+      fill: #1DB954;
+    }
+
     .carta-container {
       position: absolute;
       top: 50%;
@@ -267,7 +288,7 @@
 </head>
 <body>
 
-  <!-- 💙 Corazones flotando -->
+  <!-- Corazones -->
   <script>
     for (let i = 0; i < 30; i++) {
       const corazon = document.createElement('div');
@@ -295,31 +316,41 @@
  <!-- contenido  -->
   <div id="contenido">
     <h2>¡Hola mi lucecita! 💕</h2>
+    <p>
+        Gracias por estar en mi vida.<br />
+        Prometo seguir compartiendo canciones, abrazos y sueños contigo. 💫<br /><br />
+
+        Aunque a veces estemos lejos, quiero que sepas que siempre estaré para ti, sin importar la distancia. 🛤️💙<br />
+        Sé que en ocasiones todo puede parecer difícil, que la distancia pesa y nos hace dudar,<br />
+        pero llegará el día en que estaremos juntos sin tener que soñar con vernos. Será suficiente con voltear y saber que el otro está justo al lado. 💞<br /><br />
+
+        Te amo muchísimo, mi lucecita. Eres una persona maravillosa en mi vida. 💖
+    </p>
     
-  <p style="text-align: center; font-size: 1.3em; font-weight: bold; color: #1DB954;">
-    🌟 Para ti, mi niña preciosa 🌟
-  </p>
-  
-  <p>
-    Gracias por estar en mi vida. Prometo seguir compartiendo canciones, abrazos y sueños contigo. 💫
-  </p>
+    <p style="text-align: center; font-size: 1.3em; font-weight: bold; color: #0D47A1;">
+      🌟 Para ti, mi niña preciosa 🌟
+    </p>
+    
+    <p>
+      Gracias por estar en mi vida. Prometo seguir compartiendo canciones, abrazos y sueños contigo. 💫
+    </p>
 
-  <p>
-    Aunque a veces estemos lejos, quiero que sepas que siempre estaré para ti, sin importar la distancia. 🛤️💙
-    Sé que en ocasiones todo puede parecer difícil, que la distancia pese y nos haga dudar, pero llegará el día en que estaremos juntos sin tener que soñar con vernos. Será suficiente con voltear y saber que el otro está justo al lado. 💞
-  </p>
+    <p>
+      Aunque a veces estemos lejos, quiero que sepas que siempre estaré para ti, sin importar la distancia. 🛤️💙
+      Sé que en ocasiones todo puede parecer difícil, que la distancia pese y nos haga dudar, pero llegará el día en que estaremos juntos sin tener que soñar con vernos. Será suficiente con voltear y saber que el otro está justo al lado. 💞
+    </p>
 
-  <p>
-    Mi niña, mi princesa, mi amor, mi futura esposa, mi todo... me haces el hombre más feliz del mundo. En serio, no puedo creer que alguien tan maravillosa se haya fijado en mí y quisiera ser mi novia. Aunque por ahora no te pueda dar grandes regalos físicos —y sé que eso no es lo importante—, yo quiero darte el mundo, porque tú ya me lo diste con tu presencia.
-  </p>
+    <p>
+      Mi niña, mi princesa, mi amor, mi futura esposa, mi todo... me haces el hombre más feliz del mundo. En serio, no puedo creer que alguien tan maravillosa se haya fijado en mí y quisiera ser mi novia. Aunque por ahora no te pueda dar grandes regalos físicos —y sé que eso no es lo importante—, yo quiero darte el mundo, porque tú ya me lo diste con tu presencia.
+    </p>
 
-  <p>
-    Te amo por tu forma de ser, por cómo me quieres, cómo me amas. Jamás nadie me hizo sentir ni siquiera un 1% de lo que tú me haces sentir. Y aunque desde la primera vez que te vi me gustaste muchísimo, terminé enamorándome de tu hermosa personalidad. Tu sonrisa es lo más bonito de este mundo y quiero cuidarla toda la vida.
-  </p>
+    <p>
+      Te amo por tu forma de ser, por cómo me quieres, cómo me amas. Jamás nadie me hizo sentir ni siquiera un 1% de lo que tú me haces sentir. Y aunque desde la primera vez que te vi me gustaste muchísimo, terminé enamorándome de tu hermosa personalidad. Tu sonrisa es lo más bonito de este mundo y quiero cuidarla toda la vida.
+    </p>
 
-  <p>
-    Este es un regalo que estará contigo toda la vida y que, estoy seguro, seguirá creciendo en el futuro. Te amo un millón, mi niña preciosa, mi amor, mi lucecita, mi todo. Y recuerda siempre que tú ya eres solo mía, y yo soy tuyo... por el resto de la eternidad. ♾️
-  </p>
+    <p>
+      Este es un regalo que estará contigo toda la vida y que, estoy seguro, seguirá creciendo en el futuro. Te amo un millón, mi niña preciosa, mi amor, mi lucecita, mi todo. Y recuerda siempre que tú ya eres solo mía, y yo soy tuyo... por el resto de la eternidad. ♾️
+    </p>
 
 
     <div style="text-align: center; margin-top: 10px;">
@@ -409,65 +440,59 @@
 
   <!-- Video fullscreen oculto -->
   <div id="videoFullScreen">
-    <video id="videoPlayer" playsinline></video>
+    <video id="videoPlayer" playsinline autoplay></video>
   </div>
 
-  <img src="calabaza.png" alt="Calabaza izquierda" class="calabaza izquierda">
+  <!-- Contenido adicional -->
+  <div id="contenido" style="display: none;">
+    <!-- ... Resto del contenido ... -->
 
+    <p style="margin-top: 10px; text-align: center;">
+      <a href="https://open.spotify.com/playlist/3oOknDxOiBcuV49e1BznGp" target="_blank" class="spotify-link">
+        <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+          <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.7 365.3c-5.3 8.9-16.7 11.7-25.6 6.4-69.9-41.7-158-51.2-262.2-28.4-10.2 2.3-20.4-4.2-22.7-14.4s4.2-20.4 14.4-22.7c115.5-25.5 215.3-14.1 295.5 33.3 8.9 5.3 11.7 16.7 6.6 25.8zm35.3-70c-6.6 10.8-20.8 14.4-31.6 7.7-79.9-48.1-201.9-62.2-296.5-34.5-12 3.3-24.5-3.4-27.8-15.5-3.3-12 3.4-24.5 15.5-27.8 111.1-31 244.1-15.3 337.6 39.4 10.7 6.6 14.3 20.8 7.8 31.7zm2.5-74.5C360.5 181.4 228.7 165 114.6 198.6c-14 4.1-28.7-3.9-32.7-18s3.9-28.7 18-32.7c132.3-39.7 281.9-20.6 390.7 54.1 11.9 7.9 15.1 24 7.2 35.9-7.9 11.8-24 15-35.9 7.1"/>
+        </svg>
+        Tu Playlist mi niña c:
+      </a>
+    </p>
+
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/3oOknDxOiBcuV49e1BznGp" 
+      width="100%" height="152" frameborder="0" 
+      allow="encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- Script funcionalidad video -->
   <script>
     function abrirSolapa() {
-      const solapa = document.getElementById('solapa');
-      const solapaInferior = document.getElementById('solapaInferior');
-      const carta = document.getElementById('contenido-carta');
-
-      solapa.classList.add('abierta');
-
+      document.getElementById('solapa').classList.add('abierta');
       setTimeout(() => {
-        solapaInferior.classList.add('abierta');
+        document.getElementById('solapaInferior').classList.add('abierta');
       }, 800);
-
       setTimeout(() => {
-        carta.style.display = 'block';
+        document.getElementById('contenido-carta').style.display = 'block';
       }, 1600);
     }
 
     function mostrarVideo(event) {
       event.stopPropagation();
-
-      // Ocultar carta y corazones para que no molesten
       document.querySelector('.carta-container').style.display = 'none';
-
-
-      // Mostrar el contenedor de video fullscreen
       const videoContainer = document.getElementById('videoFullScreen');
       const videoPlayer = document.getElementById('videoPlayer');
-
-      // Define la ruta de tu video aquí (puede ser relativa o absoluta)
-      videoPlayer.src = "YourName.mp4"; // <-- Cambia aquí al nombre o url real
+      videoPlayer.src = "YourName.mp4";
       videoPlayer.autoplay = true;
       videoPlayer.controls = false;
       videoPlayer.loop = false;
       videoPlayer.muted = false;
-
       videoContainer.style.display = "flex";
-
       videoPlayer.play();
-
-      // Cuando termine el video, ocultar video y mostrar contenido
-      function finalizarVideo() {
-        videoContainer.style.display = "none";
-        document.getElementById('contenido').style.display = 'block';
-        document.body.style.overflow = 'auto';
-      }
-      
-      // Reproducir video y manejar fin
-      // Cuando termine el video, ocultar video y mostrar contenido
       videoPlayer.onended = () => {
         videoContainer.style.display = "none";
         document.getElementById('contenido').style.display = 'block';
         document.body.style.overflow = 'auto';
-      }
-
+      };
     }
   </script>
 </body>
