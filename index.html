@@ -295,7 +295,7 @@
  <!-- contenido  -->
   <div id="contenido">
     <h2>¡Hola mi lucecita! 💕</h2>
-    <div style="padding: 20px; max-width: 700px; margin: 0 auto; font-family: 'Segoe UI', sans-serif; line-height: 1.7; font-size: 1.1em; color: #ffffff; background: rgba(0, 0, 0, 0.6); border-radius: 15px;">
+    
   <p style="text-align: center; font-size: 1.3em; font-weight: bold; color: #1DB954;">
     🌟 Para ti, mi niña preciosa 🌟
   </p>
@@ -461,19 +461,12 @@
       }
       
       // Reproducir video y manejar fin
-      videoPlayer.play().then(() => {
-        // Escuchar evento cuando termina
-        videoPlayer.onended = finalizarVideo;
-      
-        // Compatibilidad adicional para móviles (por si onended no se dispara)
-        videoPlayer.addEventListener("timeupdate", function () {
-          if (videoPlayer.currentTime >= videoPlayer.duration - 0.1) {
-            finalizarVideo();
-          }
-        });
-      }).catch((error) => {
-        alert("El video no pudo comenzar. Intenta tocar de nuevo.");
-      });
+      // Cuando termine el video, ocultar video y mostrar contenido
+      videoPlayer.onended = () => {
+        videoContainer.style.display = "none";
+        document.getElementById('contenido').style.display = 'block';
+        document.body.style.overflow = 'auto';
+      }
 
     }
   </script>
