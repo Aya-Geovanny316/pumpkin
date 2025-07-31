@@ -76,13 +76,14 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 360px;
-      height: 280px;
+      height: auto; /* o usa un min-height */
       perspective: 1000px;
       z-index: 2;
       cursor: pointer;
       transition: transform 0.3s ease;
       user-select: none;
     }
+
     .carta-container:hover {
       transform: translate(-50%, -50%) scale(1.05);
     }
@@ -106,7 +107,7 @@
       height: 0;
       border-left: 177px solid transparent;
       border-right: 177px solid transparent;
-      border-top: 100px solid #f69887;
+      border-top: 111px solid #f69887;
       position: absolute;
       bottom: 64%;
       left: 50%;
@@ -165,6 +166,9 @@
     }
 
     .abrir-btn {
+      margin-top: 12px; /* Ajusta el margen para que no quede tan separado */
+      padding: 10px 20px;
+      font-size: 14px;
       margin-top: 10px;
       padding: 12px 28px;
       background: #d84a47;
@@ -181,12 +185,18 @@
       max-width: 100%;
       box-sizing: border-box;
     }
-    
+
     @media (max-width: 480px) {
+      .sobre-base {
+        padding: 20px 15px; /* Reduce padding para que el contenido no sea tan alto */
+      }
+      
       .abrir-btn {
+        margin-top: 12px; /* Ajusta el margen para que no quede tan separado */
         padding: 10px 20px;
         font-size: 14px;
-        width: 100%; /* botón toma todo el ancho en móvil */
+        width: 100%;
+        box-sizing: border-box;
       }
     }
 
