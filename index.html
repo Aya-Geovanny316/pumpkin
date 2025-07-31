@@ -439,11 +439,27 @@
       videoPlayer.play();
 
       // Cuando termine el video, ocultar video y mostrar contenido
-      videoPlayer.onended = () => {
+      function finalizarVideo() {
         videoContainer.style.display = "none";
         document.getElementById('contenido').style.display = 'block';
         document.body.style.overflow = 'auto';
       }
+      
+      // Reproducir video y manejar fin
+      videoPlayer.play().then(() => {
+        // Escuchar evento cuando termina
+        videoPlayer.onended = finalizarVideo;
+      
+        // Compatibilidad adicional para móviles (por si onended no se dispara)
+        videoPlayer.addEventListener("timeupdate", function () {
+          if (videoPlayer.currentTime >= videoPlayer.duration - 0.1) {
+            finalizarVideo();
+          }
+        });
+      }).catch((error) => {
+        alert("El video no pudo comenzar. Intenta tocar de nuevo.");
+      });
+
     }
   </script>
 </body>
