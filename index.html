@@ -1,602 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#dff1f7" />
   <title>A Mi Futura Esposa 💙</title>
-  <link rel="icon" href="OIP.png" type="image/webp" />
+  <link rel="icon" href="OIP.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; }
+    :root{--ink:#171311;--muted:#665850;--paper:#f4efe7;--paper-deep:#e9dfd2;--coral:#dd7764;--coral-deep:#9f4841;--blue:#98b8c9;--line:rgba(23,19,17,.16);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans","Segoe UI",sans-serif;--shadow:0 24px 80px rgba(23,19,17,.23)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}body::selection{background:var(--coral);color:#fff}img,video{display:block;max-width:100%}button,a{font:inherit}a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+    .opening{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#171311;color:var(--paper)}.opening__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.43;filter:saturate(.7) contrast(1.08);z-index:-3}.opening:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,19,17,.94) 0%,rgba(23,19,17,.59) 48%,rgba(23,19,17,.42) 100%);z-index:-2}.opening:after{content:"";position:absolute;inset:0;opacity:.14;z-index:-1;background-image:url("calabaza.png");background-size:260px;mix-blend-mode:soft-light}.opening__layout{width:min(1180px,calc(100% - 48px));display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,380px);gap:clamp(40px,9vw,150px);align-items:center;padding:60px 0}.opening__copy{max-width:680px}.opening__date{color:var(--coral);font-size:.8rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:24px}h1{font-family:var(--serif);font-size:clamp(3.6rem,9vw,8.2rem);font-weight:500;letter-spacing:-.065em;line-height:.88;margin:0;max-width:8ch}.opening__lead{color:rgba(244,239,231,.78);font-size:clamp(1rem,1.7vw,1.2rem);line-height:1.65;max-width:45ch;margin:34px 0 36px}.opening__side{position:relative}.envelope{min-height:360px;position:relative;padding:32px;background:var(--paper);color:var(--ink);box-shadow:var(--shadow);transform:rotate(2.5deg)}.envelope:before{content:"";position:absolute;inset:13px;border:1px solid var(--line);pointer-events:none}.envelope__top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.envelope__heart{color:var(--coral-deep);font-size:1.6rem;line-height:1}.envelope__body{position:absolute;inset:50% 32px auto;transform:translateY(-50%);text-align:center}.envelope__body h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:500;line-height:1;margin:0 0 16px}.envelope__body p{color:var(--muted);font-size:.95rem;line-height:1.5;margin:0 auto;max-width:25ch}.envelope__stamp{position:absolute;right:32px;bottom:28px;width:48px;height:48px;border-radius:50%;overflow:hidden;border:3px solid var(--coral);padding:3px}.envelope__stamp img{width:100%;height:100%;object-fit:cover;border-radius:50%}.button{display:inline-flex;align-items:center;gap:18px;border:0;border-radius:999px;padding:15px 20px 15px 24px;color:#fff;background:var(--coral-deep);cursor:pointer;font-weight:700;transition:transform .25s ease,background-color .25s ease}.button:after{content:"↗";font-size:1.1rem}.button:hover{background:#8f3e39;transform:translateY(-3px)}.opening__hint{display:block;margin-top:18px;color:rgba(244,239,231,.62);font-size:.8rem}
+    .letter{display:none;background:var(--paper);overflow:hidden;padding-inline:12px}.letter.is-visible{display:block;animation:reveal .8s cubic-bezier(.2,.8,.2,1) both}@keyframes reveal{from{opacity:0;clip-path:inset(6% 0 0);transform:translateY(24px)}to{opacity:1;clip-path:inset(0);transform:translateY(0)}}.letter__top{width:min(1180px,calc(100% - 48px));margin:auto;padding:34px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);color:var(--muted);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}.letter__top strong{color:var(--ink);font-family:var(--serif);font-size:1.1rem;font-weight:500;letter-spacing:0;text-transform:none}.letter__intro{width:min(1040px,calc(100% - 48px));margin:auto;padding:clamp(78px,12vw,170px) 0 90px;display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(44px,10vw,160px)}.letter__label{color:var(--coral-deep);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}.letter__intro h2{font-family:var(--serif);font-size:clamp(3.2rem,7vw,6.5rem);font-weight:500;letter-spacing:-.06em;line-height:.9;margin:20px 0 0;max-width:6ch}.letter__copy{max-width:680px;font-size:clamp(1.05rem,1.7vw,1.27rem);line-height:1.75}.letter__copy p{margin:0 0 28px}.letter__copy .dedication{color:var(--coral-deep);font-family:var(--serif);font-size:1.7rem;line-height:1.2;text-align:center;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .memories{background:var(--paper-deep);padding:100px 0 120px}.memories__head,.memories__grid,.music,.letter__footer{width:min(1180px,calc(100% - 48px));margin:auto}.memories__head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:42px}.memories__head h2,.music h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,5rem);font-weight:500;letter-spacing:-.05em;line-height:.95;margin:0}.memories__head p{color:var(--muted);max-width:30ch;line-height:1.55;margin:0}.memories__grid{display:grid;grid-template-columns:1.1fr .8fr 1fr;align-items:start;gap:20px}.memory{position:relative;cursor:pointer}.memory:nth-child(2){margin-top:68px}.memory__image{aspect-ratio:4/5;overflow:hidden;background:var(--paper)}.memory:nth-child(2) .memory__image{aspect-ratio:4/4.9}.memory img{width:100%;height:100%;object-fit:cover;filter:saturate(.78);transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .6s ease}.memory:hover img,.memory:focus-within img{transform:scale(1.04);filter:saturate(1)}.memory__caption{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.77rem;line-height:1.45}.memory__caption span:last-child{color:var(--muted);text-align:right}
+    .music{padding:120px 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(50px,10vw,160px);align-items:center}.music__copy p{max-width:38ch;line-height:1.65;color:var(--muted)}.spotify-link{display:inline-flex;align-items:center;gap:12px;margin-top:18px;color:var(--coral-deep);font-weight:700;text-decoration-thickness:1px;text-underline-offset:5px}.spotify-icon{width:24px;height:24px;fill:currentColor}.player{background:#1c1918;padding:16px;box-shadow:0 18px 50px rgba(23,19,17,.17)}iframe{display:block;width:100%;height:152px;border:0}.letter__footer{padding:26px 0 34px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem}
+    @media(max-width:760px){.opening__layout,.letter__intro,.music{grid-template-columns:1fr}.opening__layout{padding:50px 0;gap:50px}.opening__side{max-width:410px;width:100%;margin:auto}.envelope{min-height:300px}.letter__intro{padding-top:80px}.letter__intro h2{max-width:none}.memories__head{display:block}.memories__head p{margin-top:20px}.memories__grid{grid-template-columns:1fr 1fr;gap:16px}.memory:nth-child(2){margin-top:0}.memory:nth-child(3){grid-column:1/-1;width:70%;margin:24px auto 0}.music{padding:84px 0}}
+    @media(max-width:480px){.opening__layout,.letter__top,.letter__intro,.memories__head,.memories__grid,.music,.letter__footer{width:min(100% - 36px,1180px)}h1{font-size:clamp(3.4rem,17vw,5rem)}.opening__lead{font-size:1rem}.envelope{padding:24px}.envelope__body{inset-inline:24px}.letter__top{font-size:.7rem}.letter__top strong{font-size:.95rem}.letter__copy{font-size:1rem}.memories{padding:74px 0 86px}.memory__caption{display:block}.memory__caption span:last-child{display:block;text-align:left;margin-top:6px}.memory:nth-child(3){width:100%}.letter__footer{display:block;line-height:1.6}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    .opening__layout{display:block}.opening__copy{display:none}.opening__side{width:min(410px,100%);margin:auto}.envelope{cursor:pointer}.envelope::after{content:"Haz clic para abrir";position:absolute;left:50%;bottom:24px;transform:translateX(-50%);color:var(--coral-deep);font-size:.8rem;font-weight:700;white-space:nowrap}.opening.is-open .envelope::after{opacity:0}.opening.is-open .envelope{transform:rotate(0) scale(1.04) translateY(-14px)}.opening.is-open .envelope__top,.opening.is-open .envelope__stamp{opacity:0}.opening.is-open .envelope__body{transform:translateY(-66%);opacity:0;filter:blur(2px)}
+    .memories__grid{display:block;max-width:720px;perspective:1200px}.memory{display:none;max-width:620px;margin:0 auto!important}.memory.is-active{display:block}.memory.is-turning-next .memory__image{animation:albumNext var(--page-slide-dur) var(--page-slide-ease) both;transform-origin:left center}.memory.is-turning-prev .memory__image{animation:albumPrev var(--page-slide-dur) var(--page-slide-ease) both;transform-origin:right center}@keyframes albumNext{from{opacity:.2;transform:rotateY(10deg) translateX(24px);filter:blur(3px)}to{opacity:1;transform:rotateY(0) translateX(0);filter:blur(0)}}@keyframes albumPrev{from{opacity:.2;transform:rotateY(-10deg) translateX(-24px);filter:blur(3px)}to{opacity:1;transform:rotateY(0) translateX(0);filter:blur(0)}}.album-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:620px;margin:24px auto 0;border-top:1px solid var(--line);padding-top:16px}.album-controls button{border:0;background:transparent;color:var(--ink);cursor:pointer;font-weight:700;padding:8px 0;text-underline-offset:4px}.album-controls button:hover{text-decoration:underline}.album-controls span{color:var(--muted);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+    .t-panel-slide{transform:translateY(var(--panel-translate-y));opacity:0;filter:blur(var(--panel-blur));pointer-events:none;transition:transform var(--panel-close-dur) var(--panel-ease),opacity var(--panel-close-dur) var(--panel-ease),filter var(--panel-close-dur) var(--panel-ease);will-change:transform,opacity,filter}.t-panel-slide[data-open="true"]{transform:translateY(0);opacity:1;filter:blur(0);pointer-events:auto;transition:transform var(--panel-open-dur) var(--panel-ease),opacity var(--panel-open-dur) var(--panel-ease),filter var(--panel-open-dur) var(--panel-ease)}
+    @media(prefers-reduced-motion:reduce){.t-panel-slide,.memory.is-turning-next .memory__image,.memory.is-turning-prev .memory__image{animation:none!important;transition:none!important}}
+    .opening{background:#171311}.opening__video{display:block}.opening::after{display:none}.opening.is-complete{display:none}.opening__layout{padding:0}.envelope{background:var(--paper-deep);overflow:hidden;perspective:900px}.envelope__body,.envelope__top{opacity:0}.envelope__flap{position:absolute;inset:0 0 auto;height:58%;z-index:3;background:var(--paper);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transition:transform var(--panel-open-dur) var(--panel-ease),opacity var(--panel-open-dur) var(--panel-ease);filter:drop-shadow(0 1px 0 rgba(23,19,17,.12))}.opening.is-open .envelope__flap{transform:rotateX(-180deg);opacity:.15}.opening.is-open .envelope__body{opacity:0}.opening.is-open .envelope__stamp{opacity:0}
+    .album-shell{max-width:760px;margin:auto;padding:24px;background:#c7a887;box-shadow:0 20px 55px rgba(23,19,17,.16);border-radius:3px}.album-cover{width:100%;min-height:380px;display:grid;place-items:center;position:relative;border:1px solid rgba(23,19,17,.35);background:#8f5b43;color:#f4efe7;cursor:pointer;overflow:hidden;box-shadow:inset 0 0 0 10px rgba(244,239,231,.08),inset 0 0 0 12px rgba(23,19,17,.18);transition:transform var(--panel-open-dur) var(--panel-ease),filter var(--panel-open-dur) var(--panel-ease)}.album-cover::before{content:"";position:absolute;inset:28px;border:1px solid rgba(244,239,231,.5)}.album-cover::after{content:"";position:absolute;width:92px;height:92px;border:1px solid rgba(244,239,231,.55);border-radius:50%;transform:rotate(-18deg)}.album-cover:hover{filter:brightness(1.08);transform:translateY(-4px)}.album-cover__text{position:relative;z-index:1;text-align:center;font-family:var(--serif);font-size:clamp(2.4rem,6vw,4.8rem);line-height:.9;letter-spacing:-.06em}.album-cover__hint{display:block;margin-top:18px;font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}.album-shell.is-open .album-cover{display:none}.album-shell:not(.is-open) .memories__grid,.album-shell:not(.is-open) .album-controls{display:none}.album-shell.is-open .memories__grid{max-width:none}.album-shell.is-open{background:#c7a887}.album-shell.is-open .memory__image{border:12px solid var(--paper);box-shadow:0 10px 0 rgba(23,19,17,.1)}.album-shell.is-open .memory__image{height:auto;aspect-ratio:auto;padding:14px 14px 48px;background:#fbf8f2;box-shadow:0 12px 0 rgba(23,19,17,.1),0 20px 35px rgba(23,19,17,.12);transform:rotate(-1deg)}.album-shell.is-open .memory:nth-child(2) .memory__image{transform:rotate(1.2deg)}.album-shell.is-open .memory:nth-child(3) .memory__image{transform:rotate(-.6deg)}.album-shell.is-open .memory__image img{aspect-ratio:4/5;filter:saturate(.86)}.album-shell.is-open .memory__caption{margin:0 14px;padding:14px 0 0;border:0}.album-shell.is-open .memory__caption span:last-child{font-family:var(--serif);font-size:1.1rem;color:var(--ink);text-align:right}
+    .letter__top{position:relative}.letter__close{border:0;background:transparent;color:var(--coral-deep);cursor:pointer;font-size:.8rem;font-weight:700;padding:8px 0;text-decoration:underline;text-underline-offset:4px}.letter__close:hover{color:var(--ink)}
+    .album-shell.is-open{padding:22px;background:#6f4836;border-radius:2px;box-shadow:0 28px 70px rgba(23,19,17,.25)}.album-shell.is-open .memories__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:stretch;max-width:none;padding:0;background:var(--paper);perspective:1600px}.album-shell.is-open .memories__grid::before{content:"A Mi Futura Esposa\A\A Nuestro pequeño álbum\A\A Guarda cada recuerdo cerca";white-space:pre;text-align:center;display:grid;place-items:center;padding:40px;font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.6rem);line-height:1.15;color:var(--ink);background:#f0e8dc;border-right:1px solid rgba(23,19,17,.18);box-shadow:inset -10px 0 20px rgba(23,19,17,.04)}.album-shell.is-open .memory{grid-column:2;grid-row:1;max-width:none;width:100%;padding:26px 28px 22px;background:var(--paper);backface-visibility:hidden;transform-origin:left center}.album-shell.is-open .memory.is-turning-next{animation:bookPageNext 600ms cubic-bezier(.22,1,.36,1) both}.album-shell.is-open .memory.is-turning-prev{animation:bookPagePrev 600ms cubic-bezier(.22,1,.36,1) both}@keyframes bookPageNext{from{opacity:.15;transform:rotateY(-82deg);filter:blur(3px)}to{opacity:1;transform:rotateY(0);filter:blur(0)}}@keyframes bookPagePrev{from{opacity:.15;transform:rotateY(82deg);filter:blur(3px)}to{opacity:1;transform:rotateY(0);filter:blur(0)}}.album-shell.is-open .memory__image{border:0;box-shadow:0 12px 0 rgba(23,19,17,.1),0 20px 35px rgba(23,19,17,.12);padding:14px 14px 48px;transform:rotate(-1deg)}.album-shell.is-open .memory:nth-child(2) .memory__image{transform:rotate(1.2deg)}.album-shell.is-open .memory:nth-child(3) .memory__image{transform:rotate(-.6deg)}.album-shell.is-open .memory__image img{aspect-ratio:4/5}.album-shell.is-open .memory__caption{margin:0 14px;padding:14px 0 0}.album-shell.is-open .memory__caption span:last-child{font-size:1.1rem;text-align:right}
+    @media(max-width:760px){.opening__layout{width:min(100% - 32px,410px)}.envelope{min-height:340px}.album-shell.is-open{padding:12px}.album-shell.is-open .memories__grid{display:block;padding:10px}.album-shell.is-open .memories__grid::before{display:none}.album-shell.is-open .memory{padding:18px 12px}.album-shell.is-open .memory__image{padding:10px 10px 42px}.album-shell.is-open .memory__caption{margin:0 8px}.album-controls{gap:10px}.album-controls button{font-size:.85rem}.letter__top{gap:18px;flex-wrap:wrap}.letter__close{margin-left:auto}}
+    .opening__video{opacity:.62;filter:brightness(.92) saturate(.88) contrast(1.04)}.opening:before{background:linear-gradient(90deg,rgba(23,19,17,.72) 0%,rgba(23,19,17,.38) 48%,rgba(23,19,17,.26) 100%)}.envelope{overflow:visible;transition:transform 900ms cubic-bezier(.22,1,.36,1),box-shadow 900ms cubic-bezier(.22,1,.36,1)}.envelope__flap{z-index:3;opacity:.96;backface-visibility:hidden;transition:transform 900ms cubic-bezier(.22,1,.36,1),opacity 650ms ease 250ms}.envelope__top{opacity:0;z-index:4;transition:opacity 500ms ease 600ms,transform 700ms cubic-bezier(.22,1,.36,1) 600ms}.envelope__body{inset:auto 32px 18px;z-index:4;min-height:280px;padding:40px 24px 30px;background:var(--paper);box-shadow:0 20px 36px rgba(23,19,17,.24);opacity:0;transform:translateY(78%);transition:opacity 500ms ease 240ms,transform 1050ms cubic-bezier(.22,1,.36,1) 240ms,filter 500ms ease 240ms;filter:blur(0);text-align:center}.envelope__body .opening__lead{color:var(--muted);font-size:.95rem;line-height:1.5;max-width:31ch;margin:0 auto}.envelope-open-button{display:inline-flex;margin-top:24px;position:relative;z-index:5}.opening.is-open .envelope{transform:rotate(0) scale(1.02) translateY(-8px);box-shadow:0 36px 100px rgba(23,19,17,.36)}.opening.is-open .envelope__flap{z-index:3;opacity:.2;transform:rotateX(-180deg)}.opening.is-open .envelope__top{opacity:1;transform:translateY(-8px)}.opening.is-open .envelope__body{opacity:1;transform:translateY(-50%);filter:blur(0)}.opening.is-open .envelope__stamp{opacity:.35}.opening.is-open .envelope::after{opacity:0}
+    .album-shell:not(.is-open) .album-book{display:none}.album-book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-width:920px;margin:0 auto;background:#6f4836;padding:18px;gap:0;box-shadow:0 24px 60px rgba(23,19,17,.28);perspective:1800px}.book-left,.book-right{min-height:560px;background:var(--paper);position:relative}.book-left{display:flex;flex-direction:column;justify-content:space-between;padding:34px 30px;background:#eee4d6;border-right:1px solid rgba(23,19,17,.2);box-shadow:inset -14px 0 24px rgba(23,19,17,.05);color:var(--ink)}.book-left span{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep)}.book-left strong{font-family:var(--serif);font-size:clamp(2rem,4vw,4rem);font-weight:500;line-height:.9;letter-spacing:-.06em}.book-left small{font-size:.8rem;color:var(--muted)}.book-right{overflow:visible;transform-style:preserve-3d;background:#f7f2ea}.book-page{position:absolute;inset:0;padding:30px;background:var(--paper);backface-visibility:hidden;transform-origin:left center;transform-style:preserve-3d}.book-page-current{z-index:2;transform:rotateY(0);box-shadow:inset 12px 0 20px rgba(23,19,17,.04)}.book-page-next{z-index:1;transform:rotateY(180deg);box-shadow:inset 12px 0 20px rgba(23,19,17,.04)}.book-page-current.is-turning{animation:bookTurnOut 820ms cubic-bezier(.22,1,.36,1) both}.book-page-next.is-turning-next{animation:bookTurnInNext 820ms cubic-bezier(.22,1,.36,1) both}.book-page-next.is-turning-prev{animation:bookTurnInPrev 820ms cubic-bezier(.22,1,.36,1) both}@keyframes bookTurnOut{0%{transform:rotateY(0);filter:blur(0);opacity:1}45%{filter:blur(1px);opacity:1}100%{transform:rotateY(-180deg);filter:blur(1px);opacity:.98}}@keyframes bookTurnInNext{0%{transform:rotateY(180deg);opacity:1}100%{transform:rotateY(0);opacity:1}}@keyframes bookTurnInPrev{0%{transform:rotateY(-180deg);opacity:1}100%{transform:rotateY(0);opacity:1}}.book-photo{height:calc(100% - 82px);padding:12px 12px 44px;background:#fbf8f2;box-shadow:0 10px 0 rgba(23,19,17,.1),0 18px 28px rgba(23,19,17,.12);transform:rotate(-1deg)}.book-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.88)}.book-page-meta{display:flex;justify-content:space-between;gap:18px;align-items:start;padding:18px 4px 0}.book-page-meta span{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}.book-page-meta p{max-width:24ch;margin:0;color:var(--ink);font-family:var(--serif);font-size:1.1rem;line-height:1.2;text-align:right}.album-shell.is-open .memories__grid{display:none}.album-shell.is-open .album-controls{max-width:920px;margin:18px auto 0;padding-inline:4px}.album-book+.memories__grid{display:none}
+    @media(max-width:760px){.album-book{display:block;padding:12px}.book-left{min-height:150px;padding:22px;gap:22px;border-right:0;border-bottom:1px solid rgba(23,19,17,.2)}.book-left strong{font-size:2.2rem}.book-right{min-height:470px}.book-page{padding:18px}.book-photo{height:calc(100% - 92px);padding:9px 9px 34px}.book-page-meta{display:block;padding-top:14px}.book-page-meta p{max-width:none;text-align:left;margin-top:7px;font-size:1rem}.album-shell.is-open .album-controls{padding-inline:8px}}
+    @media(prefers-reduced-motion:reduce){.envelope,.envelope__flap,.envelope__top,.envelope__body,.book-page-current,.book-page-next{transition:none!important;animation:none!important}.opening.is-open .envelope__body{transform:translateY(-50%)}}
+    .book-page-current.turn-out-next{animation:bookTurnOut 820ms cubic-bezier(.22,1,.36,1) both}.book-page-current.turn-out-prev{animation:bookTurnOutPrev 820ms cubic-bezier(.22,1,.36,1) both}@keyframes bookTurnOutPrev{0%{transform:rotateY(0);filter:blur(0);opacity:1}45%{filter:blur(1px);opacity:1}100%{transform:rotateY(180deg);filter:blur(1px);opacity:.98}}
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #d0f0ff, #ffffff);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow-x: hidden;
-      height: 100vh;
-      position: relative;
-      color: #333;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    #video-background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-      filter: brightness(0.75) saturate(1.1);
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: -1;
-    }
-
-    .corazon {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #0D47A1;
-      transform: rotate(45deg);
-      animation: flotar 10s linear infinite;
-      opacity: 0.15;
-      z-index: 0;
-      filter: drop-shadow(0 0 2px #0D47A1);
-    }
-
-    .corazon::before,
-    .corazon::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #0D47A1;
-      border-radius: 50%;
-    }
-
-    .corazon::before { top: -10px; left: 0; }
-    .corazon::after { left: -10px; top: 0; }
-
-    @keyframes flotar {
-      0% { transform: translateY(100vh) rotate(45deg); }
-      100% { transform: translateY(-10vh) rotate(45deg); }
-    }
-
-    .carta-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 360px;
-      height: auto; /* o usa un min-height */
-      perspective: 1000px;
-      z-index: 2;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      user-select: none;
-    }
-
-    .carta-container:hover {
-      transform: translate(-50%, -50%) scale(1.05);
-    }
-
-    .sobre-base {
-      width: 100%;
-      height: 100%;
-      background: #e9f5f9;
-      border-radius: 12px;
-      border: 2.5px solid #f69887;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(246, 152, 135, 0.4);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 30px 25px;
-    }
-
-    .solapa {
-      width: 100%;
-      height: 0;
-      border-left: 177px solid transparent;
-      border-right: 177px solid transparent;
-      border-top: 111px solid #f69887;
-      position: absolute;
-      bottom: auto;
-      left: 50%;
-      transform-origin: top center;
-      transform: translateX(-50%) rotateX(0deg);
-      transition: transform 1s ease;
-      border-radius: 12px 12px 15px 15px;
-      z-index: 3;
-    }
-
-    .solapa.abierta {
-      transform: translateX(-50%) rotateX(180deg);
-    }
-
-    .solapa-inferior {
-      width: 100%; 
-      height: 100%;
-      background-color: #fcd5ce;
-      position: absolute;
-      border: 2.5px solid #f69887;
-      bottom: 0;
-      left: 50%;
-      transform-origin: bottom center;
-      transform: translateX(-50%) rotateX(0deg);
-      transition: transform 1s ease;
-      border-radius: 12px;
-      z-index: 2;
-      box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.9);
-    }
-
-    .solapa-inferior.abierta {
-      transform: translateX(-50%) rotateX(-180deg);
-    }
-
-    .contenido-carta {
-      position: relative;
-      width: 100%;
-      text-align: center;
-      color: #5f3d34;
-    }
-
-    .contenido-carta h2 {
-      color: #d84a47;
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.15);
-    }
-
-    .contenido-carta p {
-      font-size: 17px;
-      line-height: 1.5;
-      color: #633b32;
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    .abrir-btn {
-      margin-top: 12px; /* Ajusta el margen para que no quede tan separado */
-      padding: 10px 20px;
-      font-size: 14px;
-      margin-top: 10px;
-      padding: 12px 28px;
-      background: #d84a47;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      font-size: 15px;
-      font-weight: 600;
-      box-shadow: 0 5px 15px rgba(216, 74, 71, 0.7);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      user-select: none;
-      width: auto;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    @media (max-width: 480px) {
-      .sobre-base {
-        padding: 20px 15px; /* Reduce padding para que el contenido no sea tan alto */
-      }
-      
-      .abrir-btn {
-        margin-top: 12px; /* Ajusta el margen para que no quede tan separado */
-        padding: 10px 20px;
-        font-size: 14px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
-
-
-    .abrir-btn:hover {
-      background-color: #b73a3a;
-      box-shadow: 0 7px 20px rgba(183, 58, 58, 0.8);
-    }
-
-    #contenido {
-    display: none;
-    max-width: 720px;
-    margin: 40px auto 80px auto;
-    padding: 0 25px 40px 25px;
-    background: rgba(208, 236, 247, 0.3); /* muy transparente */
-    backdrop-filter: blur(10px); /* desenfoque de fondo */
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 18px;
-    box-shadow: 0 18px 50px rgba(70, 130, 180, 0.3);
-    color: #2a4e68;
-    font-size: 18px;
-    line-height: 1.65;
-    position: relative;
-    z-index: 3;
-    user-select: text;
-  }
-
-
-    #contenido h2 {
-      text-align: center;
-      color: #2196F3;
-      font-size: 28px;
-      margin-bottom: 25px;
-      font-weight: 700;
-      text-shadow:
-        0 0 5px #0D47A1,
-        0 0 10px #0D47A1,
-        0 0 20px #2196F3,
-        0 0 30px #2196F3;
-    
-    }
-
-    #contenido p {
-      margin-bottom: 18px;
-      font-weight: 500;
-      color: #ffffff;
-    }
-
-    .destello {
-      display: inline-block;
-      animation: brillo 2s infinite;
-      font-size: 2em;
-      color: gold;
-      text-shadow: 0 0 10px gold;
-      margin: 0 auto 30px auto;
-      display: block;
-    }
-
-    @keyframes brillo {
-      0% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.6); }
-      100% { opacity: 0.2; transform: scale(1); }
-    }
-
-    .tarjetas-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 22px;
-      margin-top: 25px;
-      margin-bottom: 45px;
-    }
-
-    .tarjeta {
-      width: 220px;
-      height: 280px;
-      perspective: 1100px;
-      border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(216, 74, 71, 0.3);
-      cursor: pointer;
-      transition: transform 0.4s ease;
-      user-select: none;
-      outline: none;
-    }
-    .tarjeta:hover,
-    .tarjeta:focus {
-      transform: scale(1.05);
-      box-shadow: 0 18px 40px rgba(216, 74, 71, 0.6);
-    }
-
-    .tarjeta-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-      border-radius: 18px;
-    }
-
-    .tarjeta:hover .tarjeta-inner,
-    .tarjeta:focus .tarjeta-inner {
-      transform: rotateY(180deg);
-    }
-
-    .tarjeta-front, .tarjeta-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 18px;
-      backface-visibility: hidden;
-      overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
-    }
-
-    .tarjeta-front img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 18px;
-      filter: drop-shadow(0 0 5px rgba(216, 74, 71, 0.7));
-      transition: filter 0.3s ease;
-    }
-
-    .tarjeta-front img:hover {
-      filter: drop-shadow(0 0 12px rgba(216, 74, 71, 0.9));
-    }
-
-    .tarjeta-back {
-      background-color: #fcd5ce;
-      color: #6f3e38;
-      transform: rotateY(180deg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 22px;
-      font-size: 17px;
-      text-align: center;
-      font-weight: 600;
-      line-height: 1.4;
-      user-select: text;
-    }
-
-    /* Spotify playlist styling */
-    h2 + p {
-      max-width: 680px;
-      margin: 0 auto 20px auto;
-      color: #6a4a4a;
-      font-style: italic;
-    }
-
-    a.spotify-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #1DB954;
-      font-weight: 700;
-      font-size: 20px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      user-select: text;
-    }
-
-    a.spotify-link:hover {
-      color: #14833b;
-    }
-
-    .spotify-icon {
-      width: 28px;
-      height: 28px;
-      fill: #1DB954;
-      transition: fill 0.3s ease;
-    }
-
-    a.spotify-link:hover .spotify-icon {
-      fill: #14833b;
-    }
-
-    iframe {
-      display: block;
-      margin: 0 auto 40px auto;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(27, 160, 80, 0.3);
-      max-width: 680px;
-      width: 100%;
-      height: 160px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .carta-container {
-        width: 320px;
-        height: 240px;
-      }
-      .sobre-base {
-        padding: 25px 20px;
-      }
-      #contenido {
-        margin: 30px 15px 60px 15px;
-        font-size: 16px;
-      }
-      .tarjeta {
-        width: 160px;
-        height: 210px;
-      }
-      .tarjeta-back {
-        font-size: 14px;
-        padding: 16px;
-      }
-      iframe {
-        height: 140px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .carta-container {
-        width: 280px;
-        height: 220px;
-      }
-      .sobre-base {
-        padding: 20px 15px;
-      }
-      #contenido {
-        margin: 20px 10px 50px 10px;
-        font-size: 15px;
-      }
-      .tarjeta {
-        width: 140px;
-        height: 190px;
-      }
-      iframe {
-        height: 120px;
-      }
-    }
+    /* Album powered by StPageFlip: real HTML pages, hard cover, touch and book physics. */
+    .album-shell{max-width:1120px;margin:0 auto;padding:clamp(14px,2.8vw,30px);background:#6f4836;box-shadow:0 28px 70px rgba(23,19,17,.25);border-radius:3px}.album-shell .memories__grid{display:none!important}.flipbook{width:100%;margin:0 auto}.flipbook .page{background:var(--paper);color:var(--ink);overflow:hidden;box-sizing:border-box}.flipbook .page--cover{display:grid;place-items:center;position:relative;padding:clamp(28px,5vw,70px);background:#8f5b43;color:#f4efe7;text-align:center}.flipbook .page--cover::before{content:"";position:absolute;inset:clamp(22px,4vw,52px);border:1px solid rgba(244,239,231,.48);pointer-events:none}.flipbook .page--cover::after{content:"";position:absolute;width:clamp(72px,11vw,120px);height:clamp(72px,11vw,120px);border:1px solid rgba(244,239,231,.5);border-radius:50%;transform:rotate(-18deg);pointer-events:none}.album-cover__content{position:relative;z-index:1}.album-cover__eyebrow{display:block;margin-bottom:20px;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase}.album-cover__title{display:block;font-family:var(--serif);font-size:clamp(2.5rem,6vw,5.5rem);font-weight:500;line-height:.88;letter-spacing:-.06em}.album-cover__hint{display:block;margin-top:26px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.flipbook .page--intro,.flipbook .page--end{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,5vw,64px);background:#eee4d6}.page__kicker{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}.page__title{max-width:8ch;margin:0;font-family:var(--serif);font-size:clamp(2.4rem,5vw,5rem);font-weight:500;line-height:.9;letter-spacing:-.06em}.page__note{max-width:25ch;margin:0;font-size:1rem;line-height:1.55;color:var(--muted)}.page--memory{display:flex;flex-direction:column;gap:clamp(16px,2.5vw,28px);padding:clamp(18px,3.2vw,42px)}.instant-photo{flex:1;min-height:0;padding:clamp(9px,1.4vw,16px) clamp(9px,1.4vw,16px) clamp(30px,4vw,54px);background:#fbf8f2;box-shadow:0 10px 0 rgba(23,19,17,.1),0 18px 28px rgba(23,19,17,.12);transform:rotate(-1deg)}.page--memory:nth-child(odd) .instant-photo{transform:rotate(1deg)}.instant-photo img{display:block;width:100%;height:100%;min-height:240px;object-fit:cover;filter:saturate(.88)}.page__meta{display:flex;align-items:start;justify-content:space-between;gap:18px}.page__meta strong{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep)}.page__meta p{max-width:22ch;margin:0;font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.2;text-align:right}.album-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:1120px;margin:18px auto 0;padding:0 4px;color:#f4efe7}.album-controls button{border:0;background:transparent;color:inherit;cursor:pointer;font:inherit;font-weight:700;padding:8px 0;text-underline-offset:4px}.album-controls button:hover,.album-controls button:focus-visible{text-decoration:underline}.album-controls button:disabled{opacity:.45;cursor:not-allowed;text-decoration:none}.album-controls span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}.album-shell .stf__parent{margin:0 auto!important}.album-shell .stf__block{background:transparent}.album-shell .stf__item.--soft{background:var(--paper)}
+    .flipbook--fallback{display:grid;width:100%;max-width:760px;height:100%;margin:0 auto;perspective:1400px}.flipbook--fallback .page{display:none;width:100%;min-height:clamp(420px,62vw,680px);animation:fallbackPageIn .58s cubic-bezier(.22,1,.36,1) both}.flipbook--fallback .page.is-active{display:flex}.flipbook--fallback .page--cover.is-active{display:grid}@keyframes fallbackPageIn{from{opacity:0;transform:rotateY(-12deg) translateX(18px)}to{opacity:1;transform:rotateY(0) translateX(0)}}
+    .flipbook{height:clamp(430px,62vw,680px);min-height:430px;position:relative}.flipbook .page{height:100%}
+    @media(max-width:760px){.album-shell{padding:10px}.flipbook{height:clamp(430px,125vw,620px);min-height:430px}.flipbook .page--intro,.flipbook .page--end{padding:26px}.page--memory{padding:16px;gap:18px}.instant-photo{padding:8px 8px 30px}.instant-photo img{min-height:190px}.page__meta{display:block}.page__meta p{max-width:none;margin-top:8px;text-align:left}.album-controls{gap:10px}.album-controls button{font-size:.86rem}.album-controls span{font-size:.68rem}}
+    /* Editorial album: a visible two-page spread with a real turning leaf. */
+    .flipbook .page--cover::after{display:none}.album-shell{padding:clamp(16px,3vw,34px);background:#80523e}.album-stage{width:100%;max-width:980px;margin:0 auto}.album-cover-panel{display:grid;place-items:center;min-height:clamp(460px,55vw,650px);position:relative;padding:clamp(32px,6vw,76px);background:#8f5b43;color:#f4efe7;text-align:center;box-shadow:inset 0 0 0 10px rgba(244,239,231,.07);cursor:pointer}.album-cover-panel::before{content:"";position:absolute;inset:clamp(24px,4vw,52px);border:1px solid rgba(244,239,231,.46);pointer-events:none}.album-cover-panel__content{position:relative;z-index:1}.album-cover-panel__title{display:block;font-family:var(--serif);font-size:clamp(3.2rem,8vw,7.5rem);font-weight:500;line-height:.84;letter-spacing:-.07em}.album-cover-panel__hint{display:block;margin-top:30px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.album-spread{display:grid;grid-template-columns:1fr 1fr;position:relative;min-height:clamp(460px,55vw,650px);background:#e9dfd1;box-shadow:0 24px 50px rgba(23,19,17,.28);overflow:hidden}.album-page{position:relative;min-width:0;padding:clamp(24px,4vw,54px);background:var(--paper);overflow:hidden}.album-page--left{background:#eee4d6;border-right:1px solid rgba(23,19,17,.12)}.album-page--right{background:#fbf8f2}.album-page__kicker{display:block;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}.album-page__title{max-width:8ch;margin:clamp(80px,12vw,150px) 0 0;font-family:var(--serif);font-size:clamp(2.5rem,5vw,5.6rem);font-weight:500;line-height:.88;letter-spacing:-.06em}.album-page__note{position:absolute;bottom:clamp(24px,4vw,54px);max-width:25ch;margin:0;color:var(--muted);line-height:1.5}.album-photo{height:calc(100% - 76px);padding:12px 12px 48px;background:#fffdf8;box-shadow:0 12px 25px rgba(23,19,17,.14);transform:rotate(1.2deg)}.album-photo img{display:block;width:100%;height:100%;min-height:240px;object-fit:cover;filter:saturate(.88)}.album-page__meta{display:flex;justify-content:space-between;gap:16px;padding-top:20px}.album-page__meta strong{font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;color:var(--coral-deep)}.album-page__meta p{max-width:22ch;margin:0;font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.35rem);line-height:1.18;text-align:right}.album-turn{position:absolute;z-index:5;inset:0 0 0 50%;padding:clamp(24px,4vw,54px);background:var(--paper);transform-origin:left center;backface-visibility:hidden;box-shadow:-12px 0 26px rgba(23,19,17,.13);pointer-events:none}.album-turn.is-next{animation:turnNext 760ms cubic-bezier(.22,1,.36,1) both}.album-turn.is-prev{animation:turnPrev 760ms cubic-bezier(.22,1,.36,1) both}@keyframes turnNext{0%{transform:rotateY(0);box-shadow:-12px 0 26px rgba(23,19,17,.13)}100%{transform:rotateY(-180deg);box-shadow:12px 0 26px rgba(23,19,17,.08)}}@keyframes turnPrev{0%{transform:rotateY(180deg);box-shadow:12px 0 26px rgba(23,19,17,.08)}100%{transform:rotateY(0);box-shadow:-12px 0 26px rgba(23,19,17,.13)}}.album-stage.is-open .album-cover-panel{display:none}.album-stage:not(.is-open) .album-spread,.album-stage:not(.is-open) .album-turn{display:none}.album-stage.is-open .album-spread{display:grid}.album-shell .album-controls{max-width:980px;margin-top:18px}.album-shell .album-controls button{color:#f4efe7}.album-shell .album-controls button:disabled{opacity:.38}
+    @media(max-width:760px){.album-shell{padding:10px}.album-spread{grid-template-columns:1fr;min-height:clamp(520px,128vw,700px)}.album-page--left{min-height:190px;border-right:0;border-bottom:1px solid rgba(23,19,17,.12)}.album-page__title{margin:36px 0 0;font-size:clamp(2.5rem,13vw,4.5rem)}.album-page__note{display:none}.album-page--right{min-height:330px}.album-photo{height:calc(100% - 56px);padding:8px 8px 32px}.album-photo img{min-height:220px}.album-page__meta{display:block;padding-top:14px}.album-page__meta p{max-width:none;margin-top:7px;text-align:left}.album-turn{inset:50% 0 0}.album-cover-panel{min-height:clamp(500px,130vw,680px)}}
+    @media(prefers-reduced-motion:reduce){.album-controls button,.instant-photo{transition:none!important}.instant-photo{transform:none!important}.album-turn{animation:none!important}}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <style>
+    .album-cover-panel{width:100%;border:0;font:inherit}.flipbook[hidden]{display:none!important}.album-video video{display:block;width:100%;height:100%;min-height:240px;object-fit:cover;background:#171311}.album-spread{perspective:1800px;transform-style:preserve-3d}.album-page--left,.album-page--right{backface-visibility:hidden}.album-turn{display:none;transform-style:preserve-3d}.album-turn.is-next,.album-turn.is-prev{display:block;animation-duration:260ms!important}
+  </style>
+  <style>
+    :root{--ink:#193247;--muted:#5f7887;--paper:#f8fcfd;--paper-deep:#e0f2f7;--coral:#f2b7c5;--coral-deep:#4d8eaa;--blue:#8dcddd;--line:rgba(25,50,71,.16);--shadow:0 24px 80px rgba(39,91,111,.18)}
+    body{background:var(--ink);color:var(--ink)}body::selection{background:var(--coral);color:var(--ink)}
+    .opening{background:#8fc8d8;color:var(--paper)}.opening__video{opacity:.62;filter:saturate(.72) contrast(1.02) brightness(1.08)}.opening:before{background:rgba(25,50,71,.34)}.opening__date{color:#ffe1e7}.opening__lead{color:rgba(248,252,253,.86)}.opening__hint{color:rgba(248,252,253,.78)}
+    .envelope{background:#f8fcfd;color:var(--ink);box-shadow:var(--shadow)}.envelope:before{border-color:rgba(25,50,71,.18)}.envelope__top,.envelope__body p{color:var(--muted)}.envelope__heart{color:#d9859b}.envelope__stamp{border-color:var(--coral)}.envelope__flap{background:#f8fcfd}.envelope::after{color:var(--coral-deep)}
+    .button{background:var(--coral-deep);color:#fff}.button:hover{background:#3f7891}
+    .letter{background:var(--paper)}.letter__label,.letter__copy .dedication,.spotify-link{color:var(--coral-deep)}.memories{background:var(--paper-deep)}.music{background:var(--paper)}.player{background:#c7e7ef;box-shadow:0 18px 50px rgba(39,91,111,.14)}
+    .album-shell{background:#a8d7e2;box-shadow:0 28px 70px rgba(39,91,111,.2)}.album-cover-panel{background:#79b8ca;color:#f8fcfd;box-shadow:inset 0 0 0 10px rgba(248,252,253,.16)}.album-cover-panel::before{border-color:rgba(248,252,253,.55)}.album-spread{background:#c5e7ee;box-shadow:0 24px 50px rgba(39,91,111,.22)}.album-page--left{background:#e9f6f8}.album-page--right{background:#fdfefe}.album-photo{background:#fff;box-shadow:0 12px 25px rgba(39,91,111,.16)}.album-page__kicker,.album-page__meta strong{color:var(--coral-deep)}.album-turn{background:#fdfefe;box-shadow:-12px 0 26px rgba(39,91,111,.16)}.album-shell .album-controls button{color:var(--ink)}.album-shell .album-controls span{color:var(--muted)}
+  </style>
+  <style>
+    /* Physical opening: the flap lifts first, then the letter rises from the envelope. */
+    .envelope{transform-style:preserve-3d;perspective:1200px}.envelope__flap{transform-style:preserve-3d;backface-visibility:hidden;transition:transform 680ms cubic-bezier(.22,1,.36,1),opacity 240ms ease;will-change:transform}.envelope__body{z-index:2;opacity:0;transform:translateY(66%) scale(.94);transition:transform 760ms cubic-bezier(.22,1,.36,1) 220ms,opacity 260ms ease 220ms;will-change:transform,opacity}.opening.is-open .envelope__flap{transform:rotateX(-180deg);opacity:.08}.opening.is-open .envelope__body{opacity:1;transform:translateY(-48%) scale(1);transition-delay:260ms}.opening.is-open .envelope__top{opacity:0;transition:opacity 180ms ease}.opening.is-open .envelope__stamp{opacity:0;transition:opacity 180ms ease}.opening.is-open .envelope::after{opacity:0}
+    .album-stage:not(.is-open){max-width:520px;margin-inline:auto}.album-stage:not(.is-open) .album-cover-panel{min-height:clamp(360px,52vw,560px)}.album-stage.is-open{max-width:980px}.album-stage.is-open .album-spread{min-height:clamp(460px,55vw,650px)}.album-turn{transform-style:preserve-3d;backface-visibility:hidden}.album-turn::after{content:"";position:absolute;inset:0;pointer-events:none;background:rgba(39,91,111,.08);opacity:0;transition:opacity 180ms ease}.album-turn.is-next::after,.album-turn.is-prev::after{opacity:1}.album-turn.is-next,.album-turn.is-prev{animation-duration:650ms!important}
+    @media(max-width:760px){.album-stage:not(.is-open){max-width:430px}.album-stage:not(.is-open) .album-cover-panel{min-height:clamp(420px,112vw,600px)}}
+  </style>
+  <style>
+    .envelope{overflow:visible}.envelope__flap{background:#d8eef3;backface-visibility:visible;opacity:1!important;z-index:5}.opening.is-open .envelope__flap{opacity:.9!important;z-index:1;transform:rotateX(-180deg)}.opening.is-open .envelope__body{z-index:4;transform-origin:center bottom}
+    .album-stage:not(.is-open) .album-cover-panel{height:clamp(460px,55vw,680px);min-height:0;aspect-ratio:.77}.album-stage.is-open .album-spread{height:clamp(460px,55vw,680px);min-height:0}.album-turn{will-change:transform;transform-style:preserve-3d}.album-turn.is-next{inset:0 0 0 50%;transform-origin:left center}.album-turn.is-prev{inset:0 50% 0 0;transform-origin:right center}
+    .real-album:not(.is-open){background:transparent}.real-album:not(.is-open) .real-album__board{opacity:0}.real-album:not(.is-open) .real-album__leaf:not(.is-cover-leaf){visibility:hidden}.real-album:not(.is-open) .real-album__face--back{visibility:hidden}
+    .real-page{position:absolute;inset:0}.album-shell{background:#b7e0e8;box-shadow:0 24px 54px rgba(39,91,111,.2);border:2px solid #8fc8d8;border-radius:14px}.real-album-wrap{background:#b7e0e8;border-radius:10px}.real-album__board--right,.real-album__board--left{background:#4d8eaa;border-color:#4d8eaa}.real-album__face--front .real-page--cover{background:#4d8eaa!important;color:#f8fcfd;box-shadow:inset 0 0 0 10px rgba(248,252,253,.14),inset 0 0 0 12px rgba(25,50,71,.16)}.real-album__face--front .real-page--cover::after{background:linear-gradient(90deg,rgba(25,50,71,.24),transparent 20%)}.real-page--back{background:#315f78!important;color:#f8fcfd;border:0;box-shadow:inset 0 0 0 10px rgba(248,252,253,.2),inset 0 0 0 12px rgba(25,50,71,.2)}.real-page--back .real-page__title{color:#f8fcfd}.real-page--back::after{background:linear-gradient(270deg,rgba(25,50,71,.24),transparent 20%)}.album-shell .album-controls button,.album-shell .album-controls span{color:#193247!important}
+  </style>
+  <style>
+    .album-stage,.flipbook{display:none!important}.real-album-stage{width:100%;display:flex;justify-content:center}.real-album-wrap{perspective:2200px}.real-album{--page-width:min(42vw,calc(72vh * .72),480px);--page-height:calc(var(--page-width) / .72);position:relative;width:calc(var(--page-width) * 2);height:var(--page-height);transform-style:preserve-3d;transform:translateX(-25%);transition:transform .72s cubic-bezier(.5,0,.2,1);filter:drop-shadow(0 20px 28px rgba(39,91,111,.24));background:#a8d7e2}.real-album.is-open{transform:translateX(0)}.real-album__board{position:absolute;top:-7px;bottom:-7px;width:50%;background:#8fc8d8;border:7px solid #a8d7e2;box-shadow:0 0 0 1px rgba(25,50,71,.12);transition:opacity .35s ease}.real-album__board--left{left:0;border-radius:14px 0 0 14px;opacity:0}.real-album__board--right{left:50%;border-radius:0 14px 14px 0}.real-album.is-open .real-album__board--left{opacity:1}.real-album__leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform .68s cubic-bezier(.5,0,.2,1)}.real-album__leaf.is-flipped{transform:rotateY(-180deg)}.real-album__face{position:absolute;inset:0;padding:clamp(22px,3.6vw,48px);overflow:hidden;background:#fdfefe;backface-visibility:hidden;-webkit-backface-visibility:hidden}.real-album__face--front{border-radius:0 12px 12px 0}.real-album__face--back{transform:rotateY(180deg);border-radius:12px 0 0 12px;background:#e9f6f8}.real-album__face::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3}.real-album__face--front::after{background:linear-gradient(90deg,rgba(25,50,71,.18),transparent 14%)}.real-album__face--back::after{background:linear-gradient(270deg,rgba(25,50,71,.16),transparent 14%)}.real-album__leaf.is-turning .real-album__face::before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:rgba(25,50,71,.16);animation:realBookShade .68s ease-in-out}@keyframes realBookShade{0%,100%{opacity:0}50%{opacity:1}}.real-page__kicker{display:block;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;color:var(--coral-deep);font-weight:700}.real-page__title{max-width:8ch;margin:clamp(70px,10vw,140px) 0 0;font-family:var(--serif);font-size:clamp(2.4rem,5vw,5.2rem);font-weight:500;line-height:.88;letter-spacing:-.06em}.real-page__note{position:absolute;bottom:clamp(22px,3.6vw,48px);max-width:25ch;margin:0;color:var(--muted);line-height:1.5}.real-page--cover{display:grid;place-items:center;text-align:center;background:#79b8ca;color:#f8fcfd}.real-page--cover::before{content:"";position:absolute;inset:clamp(22px,3.5vw,48px);border:1px solid rgba(248,252,253,.55)}.real-page--cover .real-page__content{position:relative;z-index:2}.real-page--cover .real-page__title{max-width:none;margin:0;font-size:clamp(3rem,6vw,6.5rem)}.real-page--cover .real-page__note{position:static;max-width:none;margin-top:28px;color:rgba(248,252,253,.86);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.real-page--memory{display:flex;flex-direction:column;gap:18px}.real-page__photo{flex:1;min-height:0;padding:12px 12px 42px;background:#fff;box-shadow:0 12px 25px rgba(39,91,111,.16);transform:rotate(1deg)}.real-page__photo img,.real-page__photo video{width:100%;height:100%;min-height:220px;object-fit:cover;background:#193247}.real-page__meta{display:flex;justify-content:space-between;gap:14px}.real-page__meta strong{font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;color:var(--coral-deep)}.real-page__meta p{max-width:21ch;margin:0;font-family:var(--serif);font-size:clamp(.95rem,1.7vw,1.25rem);line-height:1.18;text-align:right}.real-page--end{background:#e9f6f8}.real-page--back{display:grid;place-items:center;text-align:center;background:#8fc8d8}.real-page--back .real-page__title{margin:0;max-width:none;color:#f8fcfd}.real-album-controls{margin-top:18px}.real-album-controls button{color:var(--ink)!important}
+    @media(max-width:760px){.real-album{--page-width:min(72vw,360px);--page-height:calc(var(--page-width) / .68)}.real-album__face{padding:20px}.real-page__title{margin-top:42px;font-size:clamp(2.2rem,11vw,4rem)}.real-page__note{display:none}.real-page--memory{gap:12px}.real-page__photo{padding:8px 8px 30px}.real-page__photo img,.real-page__photo video{min-height:180px}.real-page__meta{display:block}.real-page__meta p{max-width:none;margin-top:7px;text-align:left}.real-album.is-open{transform:translateX(0)}}
+    .real-album.is-at-end{transform:translateX(25%)}
+    .real-album.is-at-end .real-album__board--left{opacity:1}
+    .real-album.is-at-end .real-album__board--right{opacity:0}
+    .real-album.is-at-end .real-album__leaf:not(.is-back-leaf){visibility:hidden}
+    .real-album.is-at-end .real-album__leaf.is-back-leaf{visibility:visible}
+    .real-album.is-at-end .real-album__leaf.is-back-leaf .real-album__face--back{visibility:visible}
+    .real-page--memory{padding:clamp(28px,4.4vw,56px);gap:clamp(12px,1.8vw,20px)}
+    .real-page__photo{flex:0 0 72%;width:90%;align-self:center;padding:10px 10px 30px;box-shadow:0 10px 22px rgba(39,91,111,.15);transform:rotate(1deg)}
+    .real-page__photo img,.real-page__photo video{min-height:0}
+    .real-page__meta{display:block;width:88%;margin:0 auto;padding:11px 13px 12px;border:1px solid rgba(77,142,170,.22);border-left:3px solid #4d8eaa;border-radius:8px;background:rgba(255,255,255,.62);box-shadow:0 5px 12px rgba(39,91,111,.08)}
+    .real-page__meta strong{display:block;margin-bottom:5px;font-size:.66rem;letter-spacing:.14em}
+    .real-page__meta p{max-width:none;margin:0;font-size:clamp(.86rem,1.35vw,1.08rem);line-height:1.28;text-align:left;color:#35586a}
+    .real-page--video{justify-content:center}.real-page--video .real-page__photo{flex:1;width:100%;padding:0;transform:none;background:transparent;box-shadow:none}.real-page--video .real-page__photo video{width:100%;height:100%;min-height:0;object-fit:contain;background:#193247}
+    .real-page--intro,.real-page--end{padding:clamp(34px,5vw,64px) clamp(30px,5vw,66px);box-sizing:border-box}
+    .real-page--intro .real-page__kicker,.real-page--intro .real-page__title,.real-page--end .real-page__kicker,.real-page--end .real-page__title{margin-left:clamp(8px,2vw,26px)}
+    .real-page--intro .real-page__title{max-width:12ch;font-size:clamp(2rem,4.2vw,4.25rem);line-height:1.02;letter-spacing:-.045em;text-wrap:balance}
+    .real-page--intro .real-page__note,.real-page--end .real-page__note{left:clamp(34px,5vw,66px);right:clamp(30px,5vw,66px)}
+    @media(max-width:760px){.real-page--memory{padding:22px 20px 24px;gap:10px}.real-page__photo{flex-basis:68%;width:92%;padding:8px 8px 25px}.real-page__meta{width:92%;padding:9px 10px 10px}.real-page__meta strong{font-size:.6rem}.real-page__meta p{font-size:.88rem}.real-page--intro,.real-page--end{padding:28px 24px}.real-page--intro .real-page__note,.real-page--end .real-page__note{left:24px;right:24px}}
+    .envelope{background:#78b8ca;color:var(--ink);border:1px solid rgba(25,50,71,.2);border-radius:4px;overflow:visible;isolation:isolate}
+    .envelope__body{top:auto;left:10%;right:10%;bottom:7%;height:76%;min-height:0;padding:clamp(22px,4vw,38px) clamp(18px,4vw,32px) clamp(22px,3vw,30px);opacity:1;z-index:2;transform:translateY(52%) scale(.97);transform-origin:center bottom;transition:transform 1050ms cubic-bezier(.22,1,.36,1),opacity 420ms ease;pointer-events:none;border:1px solid rgba(25,50,71,.12);box-shadow:0 16px 28px rgba(25,50,71,.2)}
+    .envelope__front{position:absolute;inset:0;z-index:3;background:#68aabd;clip-path:polygon(0 21%,50% 51%,100% 21%,100% 100%,0 100%);border-radius:3px;box-shadow:inset 0 1px 0 rgba(248,252,253,.28);pointer-events:none;transition:opacity 380ms ease}
+    .envelope__front::after{content:"";position:absolute;inset:12px;border:1px solid rgba(248,252,253,.2);border-top:0}
+    .envelope::after{z-index:6;bottom:24px}
+    .opening:not(.is-open) .envelope__body{opacity:1;transform:translateY(52%) scale(.97)}
+    .opening.is-open:not(.is-letter-risen) .envelope__body{opacity:1;transform:translateY(52%) scale(.97);pointer-events:none}
+    .opening.is-letter-risen .envelope__body{opacity:1;z-index:4;transform:translateY(-8%) scale(1);pointer-events:auto;transition-delay:80ms}
+    .opening.is-letter-risen .envelope__front{opacity:.96}
+    .opening.is-open .envelope__top{opacity:0;pointer-events:none}
+    @media(prefers-reduced-motion:reduce){.real-album,.real-album__leaf{transition:none!important}.real-album__leaf.is-turning .real-album__face::before{animation:none!important}}
+  </style>
+  <style>
+    @media(max-width:760px){.real-album{--page-width:44vw;--page-height:min(calc(var(--page-width) / .68),68vh)}}
+    /* Sobre basado en la geometría del modelo proporcionado. */
+    .envelope{width:min(400px,100%);height:300px;min-height:0;padding:0;background:#d8eef3;border-radius:15px;box-shadow:0 0 40px rgba(25,50,71,.24);overflow:visible}
+    .envelope::before{content:"";position:absolute;inset:0 auto auto 0;width:0;height:0;z-index:4;border-top:180px solid #b8dfe8;border-right:200px solid transparent;border-left:200px solid transparent;transform-origin:top;transition:transform .5s ease-in-out .7s;border-radius:10px;pointer-events:none}
+    .envelope__flap{display:none}
+    .envelope__body{position:absolute;left:0;right:auto;bottom:0;width:100%;height:100%;min-height:0;padding:20px;border-radius:10px;background:#f8fcfd;box-shadow:0 0 5px rgba(25,50,71,.2);z-index:1;transform:translateY(0);transition:transform .5s ease-in-out;overflow:hidden}
+    .envelope__body h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+    .envelope__body .opening__lead{font-size:.9rem;line-height:1.45}
+    .envelope__front{display:none}
+    .envelope__left,.envelope__right{position:absolute;inset:0;width:100%;height:100%;z-index:5;background:#78b8ca;pointer-events:none}
+    .envelope__left{clip-path:polygon(0 0,0 100%,100% 100%);border-radius:10px}
+    .envelope__right{clip-path:polygon(100% 0,0 100%,100% 100%);border-radius:10px}
+    .envelope__stamp{top:50%;left:50%;right:auto;bottom:auto;width:30px;height:30px;padding:0;border:0;border-radius:0;background:#e58da5;overflow:visible;transform:translate(-50%,0) rotate(45deg);z-index:999;transition:transform .5s ease-in-out 1s,opacity .3s ease}
+    .envelope__stamp img{display:none}
+    .envelope__stamp::before,.envelope__stamp::after{content:"";position:absolute;width:30px;height:30px;background:#e58da5;border-radius:100%}
+    .envelope__stamp::before{top:-15px;left:0}.envelope__stamp::after{right:15px;top:0}
+    .envelope::after{content:"Haz clic para abrir";left:50%;bottom:18px;transform:translateX(-50%);z-index:1000;color:#315f78;white-space:nowrap}
+    .opening.is-open .envelope::before{transform:rotateX(180deg);z-index:0}
+    .envelope__stamp{top:44%;left:50%;right:auto;bottom:auto;width:56px;height:56px;padding:3px;border:3px solid #d9859b;border-radius:50%;background:#f8fcfd;overflow:hidden;transform:translate(-50%,0) rotate(0deg);z-index:1000;transition:transform 1.15s cubic-bezier(.22,1,.36,1) .4s,opacity .4s ease .4s}
+    .envelope__stamp img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .envelope__stamp::before,.envelope__stamp::after{display:none}
+    .opening.is-stamp-turning .envelope__stamp,.opening.is-open .envelope__stamp{transform:translate(-50%,0) rotate(90deg);opacity:.92}
+    .envelope::before{display:none}
+    .envelope__flap{display:block;position:absolute;inset:0 0 auto;width:100%;height:60%;z-index:4;background:#b8dfe8;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0);opacity:1;backface-visibility:visible;transition:transform .9s cubic-bezier(.22,1,.36,1),opacity .2s ease}
+    .opening.is-open .envelope__flap{display:block;z-index:3;transform:rotateX(-180deg);opacity:1}
+    .opening:not(.is-open) .envelope__body{visibility:hidden;transform:translateY(0);opacity:1}
+    .opening.is-open:not(.is-letter-risen) .envelope__body{visibility:visible;transform:translateY(0);z-index:4}
+    @keyframes letterLift{0%{transform:translateY(0)}62%{transform:translateY(-320px)}100%{transform:translateY(-155px)}}
+    .opening.is-letter-risen .envelope__body{--letter-rise:-290px;visibility:visible;z-index:4;transform:translateY(0);opacity:1;pointer-events:auto;transition:none;animation:letterLift 1.4s cubic-bezier(.22,1,.36,1) both}
+    .opening.is-letter-over .envelope__body{z-index:10000}
+    .opening.is-letter-settled .envelope__body{z-index:10000}
+    .opening.is-letter-risen .envelope__left,.opening.is-letter-risen .envelope__right{z-index:5}
+    .opening.is-open .envelope::after{opacity:0}
+    @media(max-width:400px){.envelope{width:300px;height:250px}.envelope::before{border-top-width:150px;border-right-width:150px;border-left-width:150px}.envelope__body{padding:16px}@keyframes letterLiftMobile{0%{transform:translateY(0)}62%{transform:translateY(-270px)}100%{transform:translateY(-130px)}}.opening.is-letter-risen .envelope__body{animation-name:letterLiftMobile}}
+    .memories{position:relative;isolation:isolate;overflow:hidden;background:#b7e0e8}
+    .memories::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(224,242,247,.18),rgba(183,224,232,.1));pointer-events:none}
+    .memories__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.86;filter:saturate(.84) brightness(.98) contrast(1.06);pointer-events:none}
+    .memories__head,.memories__grid,.album-shell{position:relative;z-index:2}
+    .memories__head h2,.memories__head h2 em{color:#fff;text-shadow:0 3px 18px rgba(25,50,71,.4)}
   </style>
 </head>
 <body>
-
-   <!-- Video de fondo -->
-  <video id="video-background" autoplay muted loop playsinline>
-    <source src="YourName.mp4" type="video/mp4" />
-    <!-- Aquí puedes añadir más fuentes para compatibilidad -->
-  </video>
-  <div id="overlay"></div>
-
-  <!-- Corazones flotantes -->
+  <main>
+    <section class="opening" aria-label="Carta de amor cerrada">
+      <video class="opening__video" autoplay muted loop playsinline poster="us.jpeg" aria-hidden="true"><source src="YourName.mp4" type="video/mp4" /></video>
+      <div class="opening__layout"><div class="opening__copy"><div class="opening__date">Feliz Día de la Novia 💙</div><h1 id="opening-title">A mi futura esposa.</h1><p class="opening__lead">Desde que llegaste a mi vida, cada día se siente como una canción bonita. Gracias por este primer mes, por cada serie, cada risa y por ser tú.</p><button class="button" id="open-letter" type="button" aria-controls="letter" aria-expanded="false">Aún hay más 💌</button><span class="opening__hint">Abre esta carta cuando tengas un momento para nosotros.</span></div><div class="opening__side"><div class="envelope"><div class="envelope__top"><span>Una pequeña carta</span><span class="envelope__heart">♥</span></div><div class="envelope__body"><h2>Para mi lucecita</h2><p>Un recuerdo para guardar cerca, incluso cuando la distancia se haga grande.</p></div><div class="envelope__stamp"><img src="OIP.png" alt="" /></div></div></div></div>
+    </section>
+    <section class="letter" id="letter" aria-labelledby="letter-title" tabindex="-1">
+      <div class="letter__top"><strong>Una carta para ti</strong><span>Con amor, siempre</span></div>
+      <div class="letter__intro"><div><div class="letter__label">Mi lucecita</div><h2 id="letter-title">Hola, mi amor.</h2></div><div class="letter__copy"><p>Gracias por estar en mi vida.<br />Prometo seguir compartiendo canciones, abrazos y sueños contigo. 💫</p><p>Aunque a veces estemos lejos, quiero que sepas que siempre estaré para ti, sin importar la distancia. 🛤️💙</p><p>Sé que en ocasiones todo puede parecer difícil, que la distancia pesa y nos hace dudar, pero llegará el día en que estaremos juntos sin tener que soñar con vernos. Será suficiente con voltear y saber que el otro está justo al lado. 💞</p><p>Te amo muchísimo, mi lucecita. Eres una persona maravillosa en mi vida. 💖</p><p class="dedication">✨ Para ti, mi niña preciosa ✨</p><p>Mi niña, mi princesa, mi amor, mi futura esposa, mi todo... me haces el hombre más feliz del mundo. En serio, no puedo creer que alguien tan maravillosa se haya fijado en mí y quisiera ser mi novia. Aunque por ahora no te pueda dar grandes regalos físicos —y sé que eso no es lo importante—, yo quiero darte el mundo, porque tú ya me lo diste con tu presencia.</p><p>Te amo por tu forma de ser, por cómo me quieres, cómo me amas. Jamás nadie me hizo sentir ni siquiera un 1% de lo que tú me haces sentir. Y aunque desde la primera vez que te vi me gustaste muchísimo, terminé enamorándome de tu hermosa personalidad. Tu sonrisa es lo más bonito de este mundo y quiero cuidarla toda la vida.</p><p>Este es un regalo que estará contigo toda la vida y que, estoy seguro, seguirá creciendo en el futuro. Te amo un millón, mi niña preciosa, mi amor, mi lucecita, mi todo. Y recuerda siempre que tú ya eres solo mía, y yo soy tuyo... por el resto de la eternidad. ♾️</p></div></div>
+      <section class="memories" aria-labelledby="memories-title"><div class="memories__head"><h2 id="memories-title">Pequeños recuerdos,<br /><em>un mundo entero.</em></h2></div><div class="memories__grid"><article class="memory"><div class="memory__image"><img src="pumpkin.jpeg" alt="Recuerdo en una fotografía" /></div><div class="memory__caption"><span>Tu carita</span><span>Siempre sonrío cuando te veo. ❤️</span></div></article><article class="memory"><div class="memory__image"><img src="smile.jpeg" alt="Una sonrisa que recuerda el inicio de la historia" /></div><div class="memory__caption"><span>El comienzo</span><span>Aquí empezó todo lo bonito. ✨</span></div></article><article class="memory"><div class="memory__image"><img src="us.jpeg" alt="Una fotografía de los dos juntos" /></div><div class="memory__caption"><span>Nosotros</span><span>La primera vez que dormimos juntos. 💖</span></div></article></div></section>
+      <section class="music" aria-labelledby="music-title"><div class="music__copy"><div class="letter__label">Banda sonora</div><h2 id="music-title">Canciones que suenan a nosotros.</h2><p>Si algún día me extrañas, recuerda que siempre vivirás en las canciones que me hacen pensar en ti. Cada nota, cada verso… es un pedacito de nosotros.</p><a class="spotify-link" href="https://open.spotify.com/embed/playlist/3oOknDxOiBcuV49e1BznGp" target="_blank" rel="noopener">Tu playlist, mi niña c:<svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 168" aria-hidden="true"><path d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm37 121c-4.7 2.9-10.6 1.4-13.6-3.3-23.5-36.3-67.1-39.3-72.6-39.8-5-.4-9.3-4.7-8.9-9.7.4-5 4.7-8.7 9.7-8.9 6.5-.2 29.8 3.1 53.3 43.7 36.1 5 35.8 14.9 31.1 17.9zM135.7 104.6c-5.8 3.5-14.6 1.7-18.9-4-26.9-31.3-67.3-36.3-69.1-36.6-5.5-1-9.1-6.7-8.1-12.2 1-5.5 6.7-9.1 12.2-8.1 3.4.6 9.6 1.9 19.7 6.1 9.6 3.9 25.1 11.6 38.3 26.6 24.3 27.6 29.2 39.4 25.9 44.2z" /></svg></a></div><div class="player"><iframe src="https://open.spotify.com/embed/playlist/3oOknDxOiBcuV49e1BznGp" title="Playlist de Spotify para mi niña" allow="encrypted-media"></iframe></div></section>
+      <footer class="letter__footer"><span>A Mi Futura Esposa</span><span>Hecho con canciones, recuerdos y mucho amor.</span></footer>
+    </section>
+  </main>
   <script>
-    for (let i = 0; i < 30; i++) {
-      const corazon = document.createElement('div');
-      corazon.className = 'corazon';
-      corazon.style.left = Math.random() * 100 + 'vw';
-      corazon.style.top = (Math.random() * 100) + 'vh';
-      corazon.style.animationDuration = (5 + Math.random() * 5) + 's';
-      corazon.style.opacity = 0.15 + Math.random() * 0.25;
-      document.body.appendChild(corazon);
+    const opening = document.querySelector('.opening');
+    const memoriesSection = document.querySelector('.memories');
+    if (memoriesSection) {
+      const memoriesVideo = document.createElement('video');
+      memoriesVideo.className = 'memories__video';
+      memoriesVideo.src = 'YourName.mp4';
+      memoriesVideo.autoplay = true;
+      memoriesVideo.muted = true;
+      memoriesVideo.loop = true;
+      memoriesVideo.playsInline = true;
+      memoriesVideo.setAttribute('aria-hidden', 'true');
+      memoriesSection.prepend(memoriesVideo);
     }
-  </script>
+    const envelope = document.querySelector('.envelope');
+    const letter = document.querySelector('#letter');
+    const openButton = document.querySelector('#open-letter');
+    const envelopeBody = envelope.querySelector('.envelope__body');
+    const openingLead = document.querySelector('.opening__lead');
+    envelopeBody.querySelector('p').replaceWith(openingLead);
+    openButton.classList.add('envelope-open-button');
+    envelopeBody.append(openButton);
+    const flap = document.createElement('span');
+    flap.className = 'envelope__flap';
+    flap.setAttribute('aria-hidden', 'true');
+    envelope.prepend(flap);
+    const envelopeFront = document.createElement('span');
+    envelopeFront.className = 'envelope__front';
+    envelopeFront.setAttribute('aria-hidden', 'true');
+    envelope.append(envelopeFront);
+    const envelopeLeft = document.createElement('span');
+    envelopeLeft.className = 'envelope__left';
+    envelopeLeft.setAttribute('aria-hidden', 'true');
+    const envelopeRight = document.createElement('span');
+    envelopeRight.className = 'envelope__right';
+    envelopeRight.setAttribute('aria-hidden', 'true');
+    envelope.append(envelopeLeft, envelopeRight);
+    let letterOpened = false;
+    let envelopeRiseTimer;
+    let envelopeOpenTimer;
+    let letterOverlayTimer;
 
-  <div class="carta-container" onclick="abrirSolapa()">
-    <div class="solapa" id="solapa"></div>
-    <div class="solapa-inferior" id="solapaInferior"></div>
-    <div class="sobre-base">
-      <div class="contenido-carta" id="contenido-carta">
-        <h2>Feliz Día de la Novia 💙</h2>
-        <p>Desde que llegaste a mi vida, cada día se siente como una canción bonita.<br />
-        Gracias por este primer mes. Por cada serie, cada risa, y por ser tú.</p>
-        <button class="abrir-btn" onclick="mostrarContenido(event)">Aún hay más 💌</button>
-      </div>
-    </div>
-  </div>
+    function revealEnvelope() {
+      if (opening.classList.contains('is-open') || opening.classList.contains('is-stamp-turning') || letterOpened) return;
+      opening.classList.add('is-stamp-turning');
+      window.clearTimeout(envelopeOpenTimer);
+      envelopeOpenTimer = window.setTimeout(() => {
+        if (letterOpened) return;
+        opening.classList.remove('is-stamp-turning');
+        opening.classList.add('is-open');
+        envelope.setAttribute('aria-expanded', 'true');
+        window.clearTimeout(envelopeRiseTimer);
+        envelopeRiseTimer = window.setTimeout(() => {
+          if (letterOpened) return;
+          opening.classList.add('is-letter-risen');
+          window.clearTimeout(letterOverlayTimer);
+          letterOverlayTimer = window.setTimeout(() => {
+            if (!letterOpened) opening.classList.add('is-letter-over');
+          }, 850);
+          window.setTimeout(() => {
+            if (letterOpened) return;
+            opening.classList.add('is-letter-settled');
+            openButton.focus({ preventScroll: true });
+          }, 1450);
+        }, 980);
+      }, 1600);
+    }
 
-  <div id="contenido" tabindex="0" aria-live="polite" aria-label="Mensaje romántico ampliado">
-    <h2>¡Hola mi lucecita! 💕</h2>
-    <p>
-      Gracias por estar en mi vida.<br />
-      Prometo seguir compartiendo canciones, abrazos y sueños contigo. 💫<br /><br />
-
-      Aunque a veces estemos lejos, quiero que sepas que siempre estaré para ti, sin importar la distancia. 🛤️💙<br />
-      Sé que en ocasiones todo puede parecer difícil, que la distancia pesa y nos hace dudar,<br />
-      pero llegará el día en que estaremos juntos sin tener que soñar con vernos. Será suficiente con voltear y saber que el otro está justo al lado. 💞<br /><br />
-
-      Te amo muchísimo, mi lucecita. Eres una persona maravillosa en mi vida. 💖
-    </p>
-
-    <p style="
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: 700;
-      color: #2196F3;
-      margin-bottom: 35px;
-      text-shadow:
-        0 0 5px #0D47A1,
-        0 0 10px #0D47A1,
-        0 0 20px #2196F3,
-        0 0 30px #2196F3;
-    ">
-      🌟 Para ti, mi niña preciosa 🌟
-  </p>
-
-    <p>
-      Mi niña, mi princesa, mi amor, mi futura esposa, mi todo... me haces el hombre más feliz del mundo. En serio, no puedo creer que alguien tan maravillosa se haya fijado en mí y quisiera ser mi novia. Aunque por ahora no te pueda dar grandes regalos físicos —y sé que eso no es lo importante—, yo quiero darte el mundo, porque tú ya me lo diste con tu presencia.
-    </p>
-
-    <p>
-      Te amo por tu forma de ser, por cómo me quieres, cómo me amas. Jamás nadie me hizo sentir ni siquiera un 1% de lo que tú me haces sentir. Y aunque desde la primera vez que te vi me gustaste muchísimo, terminé enamorándome de tu hermosa personalidad. Tu sonrisa es lo más bonito de este mundo y quiero cuidarla toda la vida.
-    </p>
-
-    <p>
-      Este es un regalo que estará contigo toda la vida y que, estoy seguro, seguirá creciendo en el futuro. Te amo un millón, mi niña preciosa, mi amor, mi lucecita, mi todo. Y recuerda siempre que tú ya eres solo mía, y yo soy tuyo... por el resto de la eternidad. ♾️
-    </p>
-
-    <div style="text-align: center; margin-top: 10px;">
-      <span class="destello">✨</span>
-    </div>
-
-    <div class="tarjetas-container">
-      <div class="tarjeta" tabindex="0" aria-label="Recuerdo 1: Siempre sonrío cuando veo tu carita.">
-        <div class="tarjeta-inner">
-          <div class="tarjeta-front">
-            <img src="pumpkin.jpeg" alt="Recuerdo 1">
-          </div>
-          <div class="tarjeta-back">
-            Siempre sonrío cuando veo tu carita, por eso esta foto está acá. ❤️
-          </div>
-        </div>
-      </div>
-
-      <div class="tarjeta" tabindex="0" aria-label="Recuerdo 2: Esta foto me recuerda lo feliz que me haces.">
-        <div class="tarjeta-inner">
-          <div class="tarjeta-front">
-            <img src="smile.jpeg" alt="Recuerdo 2">
-          </div>
-          <div class="tarjeta-back">
-            Aquí empezó todo lo bonito entre nosotros, la primera vez que nos vimos pero no la primera en que supe que eras todo lo que queria. ✨
-          </div>
-        </div>
-      </div>
-
-      <div class="tarjeta" tabindex="0" aria-label="Recuerdo 3: algun dia">
-        <div class="tarjeta-inner">
-          <div class="tarjeta-front">
-            <img src="us.jpeg" alt="Recuerdo 3">
-          </div>
-          <div class="tarjeta-back">
-           esta ya no es una foto por IA es una foto de nosotros la priemera vez que dormimos juntos y ahora solo falta junto a Damian. 💖
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2>Playlist que hice para ti</h2>
-    <p>Si algún día me extrañas, recuerda que siempre vivirás en las canciones que me hacen pensar en ti. <br />
-      Cada nota, cada verso… es un pedacito de nosotros. <br />
-      (spotify no me deja ponerlas completas porque aja, pero te dejo la playlist que te hice)💞</p>
-    <a href="https://open.spotify.com/embed/playlist/3oOknDxOiBcuV49e1BznGp" target="_blank" rel="noopener" class="spotify-link" aria-label="Abrir playlist de Spotify en nueva pestaña">
-      Tu Playlist mi niña c:
-      <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 168" aria-hidden="true" focusable="false">
-        <path d="M84,0C37.6,0,0,37.6,0,84c0,46.4,37.6,84,84,84c46.4,0,84-37.6,84-84C168,37.6,130.4,0,84,0z M121,121
-          c-4.7,2.9-10.6,1.4-13.6-3.3c-23.5-36.3-67.1-39.3-72.6-39.8c-5-0.4-9.3-4.7-8.9-9.7c0.4-5,4.7-8.7,9.7-8.9
-          c6.5-0.2,29.8,3.1,53.3,43.7C126,108,125.7,117.9,121,121z M135.7,104.6c-5.8,3.5-14.6,1.7-18.9-4c-26.9-31.3-67.3-36.3-69.1-36.6
-          c-5.5-1-9.1-6.7-8.1-12.2c1-5.5,6.7-9.1,12.2-8.1c3.4,0.6,9.6,1.9,19.7,6.1c9.6,3.9,25.1,11.6,38.3,26.6
-          C134.1,88,139,99.8,135.7,104.6z M137.8,80.5c-31.1-18.3-51.2-20.5-54-20.7c-6.1-0.3-11.3-5.7-11-11.8c0.3-6.1,5.7-11.3,11.8-11
-          c4.3,0.2,8.3,0.7,12,1.4c5.5,1.1,43.3,9.7,63.1,43.3c3.7,6.3-1.2,14.2-8,14.2C145.3,106,138,94,137.8,80.5z"/>
-      </svg>
-    </a>
-    <iframe src="https://open.spotify.com/embed/playlist/3oOknDxOiBcuV49e1BznGp" width="100%" height="160" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-  </div>
-
-  <script>
-    function abrirSolapa() {
-      const solapa = document.getElementById('solapa');
-      const solapaInf = document.getElementById('solapaInferior');
-      if (!solapa.classList.contains('abierta')) {
-        solapa.classList.add('abierta');
-        solapaInf.classList.add('abierta');
-      } else {
-        solapa.classList.remove('abierta');
-        solapaInf.classList.remove('abierta');
+    function openLetter() {
+      if (!opening.classList.contains('is-open')) {
+        revealEnvelope();
+        return;
       }
+      if (letterOpened) return;
+      letterOpened = true;
+      opening.classList.add('is-open');
+      opening.classList.add('is-letter-risen');
+      opening.classList.add('is-letter-over');
+      opening.classList.add('is-letter-settled');
+      envelope.setAttribute('aria-expanded', 'true');
+      letter.classList.add('is-visible', 't-panel-slide');
+      letter.setAttribute('data-open', 'true');
+      window.setTimeout(() => {
+        opening.classList.add('is-complete');
+        letter.focus({ preventScroll: true });
+        letter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 620);
     }
 
-    function mostrarContenido(event) {
-      event.stopPropagation(); // Evitar que se active el abrirSolapa
-      
-      document.querySelector('.carta-container').style.display = 'none';
-
-      // Mostrar video y contenido
-      const contenido = document.getElementById('contenido');
-      contenido.style.display = 'block';
-      contenido.focus();
-
-      const video = document.getElementById('video-background');
-      if (video.paused) {
-        video.style.display = 'block';
-        video.play();
+    envelope.setAttribute('role', 'button');
+    envelope.setAttribute('tabindex', '0');
+    envelope.setAttribute('aria-controls', 'letter');
+    envelope.setAttribute('aria-expanded', 'false');
+    envelope.addEventListener('click', (event) => {
+      if (event.target.closest('#open-letter')) return;
+      revealEnvelope();
+    });
+    envelope.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        revealEnvelope();
       }
+    });
+    if (openButton) openButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      openLetter();
+    });
 
-      window.scrollTo({top: contenido.offsetTop - 20, behavior: 'smooth'});
+    /* Legacy album implementation replaced by the StPageFlip book below.
+    const memories = [...document.querySelectorAll('.memory')];
+    const memoryGrid = document.querySelector('.memories__grid');
+    document.querySelector('.album-controls')?.remove();
+    const albumShell = document.createElement('div');
+    albumShell.className = 'album-shell';
+    memoryGrid.replaceWith(albumShell);
+    albumShell.append(memoryGrid);
+    albumShell.insertAdjacentHTML('afterbegin', '<button class="album-cover" type="button" aria-expanded="false"><span class="album-cover__text">Nuestros<br><em>recuerdos</em><span class="album-cover__hint">Abrir álbum</span></span></button>');
+    albumShell.insertAdjacentHTML('beforeend', '<div class="album-controls" aria-label="Controles del álbum"><button type="button" data-album-prev>Anterior</button><span data-album-count aria-live="polite">Página 1 de ' + memories.length + '</span><button type="button" data-album-next>Siguiente</button></div>');
+    const albumCover = albumShell.querySelector('.album-cover');
+    const albumCounter = albumShell.querySelector('[data-album-count]');
+    const albumData = memories.map((memory) => ({
+      image: 'album/' + memory.querySelector('img').getAttribute('src'),
+      alt: memory.querySelector('img').getAttribute('alt'),
+      label: memory.querySelector('.memory__caption span:first-child').textContent,
+      text: memory.querySelector('.memory__caption span:last-child').textContent
+    }));
+    const albumBook = document.createElement('div');
+    albumBook.className = 'album-book';
+    albumBook.innerHTML = '<div class="book-left"><span>Álbum de fotos</span><strong>Nuestros<br><em>recuerdos</em></strong><small>Una página a la vez.</small></div><div class="book-right"><article class="book-page book-page-current"></article><article class="book-page book-page-next"></article></div>';
+    albumShell.insertBefore(albumBook, memoryGrid);
+    memoryGrid.hidden = true;
+    const currentBookPage = albumBook.querySelector('.book-page-current');
+    const nextBookPage = albumBook.querySelector('.book-page-next');
+    const renderBookPage = (page, index) => {
+      const item = albumData[index];
+      page.innerHTML = '<div class="book-photo"><img src="' + item.image + '" alt="' + item.alt + '"></div><div class="book-page-meta"><span>' + item.label + '</span><p>' + item.text + '</p></div>';
+    };
+    renderBookPage(currentBookPage, 0);
+    renderBookPage(nextBookPage, 1 % albumData.length);
+    albumCover.addEventListener('click', () => { albumShell.classList.add('is-open'); albumCover.setAttribute('aria-expanded', 'true'); });
+    let currentMemory = 0;
+    memoryGrid.insertAdjacentHTML('afterend', '<div class="album-controls" aria-label="Controles del álbum"><button type="button" data-album-prev>Anterior</button><span data-album-count aria-live="polite">Página 1 de ' + memories.length + '</span><button type="button" data-album-next>Siguiente</button></div>');
+    const strayControls = document.querySelectorAll('.album-controls');
+    strayControls[0]?.remove();
+    const albumCount = albumCounter;
+
+    function showMemory(nextIndex, direction) {
+      const nextMemory = (nextIndex + memories.length) % memories.length;
+      if (albumBook.classList.contains('is-turning')) return;
+      albumBook.classList.add('is-turning');
+      renderBookPage(nextBookPage, nextMemory);
+      nextBookPage.classList.add(direction === 'next' ? 'is-turning-next' : 'is-turning-prev');
+      currentBookPage.classList.add('is-turning', direction === 'next' ? 'turn-out-next' : 'turn-out-prev');
+      window.setTimeout(() => {
+        currentMemory = nextMemory;
+        currentBookPage.innerHTML = nextBookPage.innerHTML;
+        currentBookPage.classList.remove('is-turning', 'turn-out-next', 'turn-out-prev');
+        nextBookPage.classList.remove('is-turning-next', 'is-turning-prev');
+        albumBook.classList.remove('is-turning');
+        albumCount.textContent = 'Página ' + (currentMemory + 1) + ' de ' + memories.length;
+      }, 820);
     }
-  </script>
 
+    memories[0].classList.add('is-active');
+    albumShell.querySelector('[data-album-prev]').addEventListener('click', () => showMemory(currentMemory - 1, 'prev'));
+    albumShell.querySelector('[data-album-next]').addEventListener('click', () => showMemory(currentMemory + 1, 'next'));
+    document.addEventListener('keydown', (event) => {
+      if (!letterOpened || !document.querySelector('.memories').matches(':focus-within')) return;
+      if (event.key === 'ArrowLeft') showMemory(currentMemory - 1, 'prev');
+      if (event.key === 'ArrowRight') showMemory(currentMemory + 1, 'next');
+    });
+    */
+
+    const albumMemories = [...document.querySelectorAll('.memory')];
+    const albumGrid = document.querySelector('.memories__grid');
+    const albumShell = document.createElement('div');
+    albumShell.className = 'album-shell';
+    albumGrid.replaceWith(albumShell);
+    const albumData = albumMemories.map((memory) => ({
+      image: memory.querySelector('img').getAttribute('src'),
+      alt: memory.querySelector('img').getAttribute('alt'),
+      label: memory.querySelector('.memory__caption span:first-child').textContent,
+      text: memory.querySelector('.memory__caption span:last-child').textContent
+    }));
+    albumData.push(
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.30 PM.jpeg', alt: 'Recuerdo compartido', label: 'Un momento más', text: 'Otro pedacito bonito de nuestra historia.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.29 PM (1).jpeg', alt: 'Recuerdo compartido', label: 'Contigo', text: 'Me gusta guardar estos instantes cerca.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.29 PM (2).jpeg', alt: 'Recuerdo compartido', label: 'Una sonrisa', text: 'De esos momentos que vuelven a iluminar el día.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.29 PM (3).jpeg', alt: 'Recuerdo compartido', label: 'Nuestro mundo', text: 'Cada recuerdo tiene algo de nosotros.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.29 PM.jpeg', alt: 'Recuerdo compartido', label: 'Un día especial', text: 'Gracias por hacer especial lo cotidiano.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.30 PM (1).jpeg', alt: 'Recuerdo compartido', label: 'Más de nosotros', text: 'Quiero seguir llenando páginas contigo.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.30 PM (2).jpeg', alt: 'Recuerdo compartido', label: 'Para recordar', text: 'Una imagen, una historia y mucho cariño.' },
+      { image: 'album/WhatsApp Image 2026-11-19 at 6.11.30 PM (3).jpeg', alt: 'Recuerdo compartido', label: 'Siempre', text: 'Lo bonito de nosotros merece quedarse.' },
+      { media: 'video', image: 'album/WhatsApp Video 2026-11-19 at 6.11.30 PM.mp4', alt: 'Video de nuestros recuerdos', label: 'Video especial', text: 'Uno de mis videos favoritos por esa sonrisa hermosa.' }
+    );
+    albumData[0].image = 'album/pumpkin.jpeg';
+    albumData[1].image = 'album/smile.jpeg';
+    albumData[2].image = 'album/us.jpeg';
+    albumData.forEach((item) => { item.image = encodeURI(item.image); });
+    const makePage = (className, content) => {
+      const node = document.createElement('article');
+      node.className = 'page ' + className;
+      node.innerHTML = content;
+      return node;
+    };
+    const flipbook = document.createElement('div');
+    flipbook.className = 'flipbook';
+    flipbook.setAttribute('aria-label', 'Álbum de fotos de nuestros recuerdos');
+    flipbook.append(makePage('page--cover', '<div class="album-cover__content"><span class="album-cover__eyebrow">Un recuerdo para guardar</span><strong class="album-cover__title">Álbum<br>de fotos</strong><span class="album-cover__hint">Toca o arrastra para abrir</span></div>'));
+    flipbook.append(makePage('page--intro', '<span class="page__kicker">Nuestros recuerdos</span><h3 class="page__title">Una página a la vez.</h3><p class="page__note">Hay momentos pequeños que terminan ocupando un lugar enorme en el corazón.</p>'));
+    albumData.forEach((item) => {
+      flipbook.append(makePage('page--memory', '<div class="instant-photo"><img src="' + item.image + '" alt="' + item.alt + '"></div><div class="page__meta"><strong>' + item.label + '</strong><p>' + item.text + '</p></div>'));
+    });
+    flipbook.append(makePage('page--end', '<span class="page__kicker">Fin del álbum</span><h3 class="page__title">Y todavía faltan muchas.</h3><p class="page__note">Gracias por ser mi recuerdo favorito y mi lugar seguro.</p>'));
+    albumShell.append(flipbook);
+    albumShell.insertAdjacentHTML('beforeend', '<div class="album-controls" aria-label="Controles del álbum"><button type="button" data-album-prev>Anterior</button><span data-album-count aria-live="polite">Portada</span><button type="button" data-album-next>Siguiente</button></div>');
+    const albumCounter = albumShell.querySelector('[data-album-count]');
+    const prevButton = albumShell.querySelector('[data-album-prev]');
+    const nextButton = albumShell.querySelector('[data-album-next]');
+    flipbook.hidden = true;
+    const albumStage = document.createElement('div');
+    albumStage.className = 'album-stage';
+    albumStage.innerHTML = '<button class="album-cover-panel" type="button" aria-label="Abrir álbum de fotos"><span class="album-cover-panel__content"><strong class="album-cover-panel__title">Álbum<br>de fotos</strong><span class="album-cover-panel__hint">Toca para abrir</span></span></button><div class="album-spread" aria-live="polite"><div class="album-page album-page--left"></div><div class="album-page album-page--right"></div><div class="album-turn" aria-hidden="true"></div></div>';
+    albumShell.append(albumStage);
+    const albumCoverPanel = albumStage.querySelector('.album-cover-panel');
+    const leftAlbumPage = albumStage.querySelector('.album-page--left');
+    const rightAlbumPage = albumStage.querySelector('.album-page--right');
+    const albumTurn = albumStage.querySelector('.album-turn');
+    const albumSpreads = [[{ type: 'intro' }, { type: 'memory', index: 0 }]];
+    for (let index = 1; index < albumData.length; index += 2) {
+      albumSpreads.push([{ type: 'memory', index }, index + 1 < albumData.length ? { type: 'memory', index: index + 1 } : { type: 'end' }]);
+    }
+    albumSpreads.push([{ type: 'end' }, { type: 'blank' }]);
+    let albumSpreadIndex = 0;
+    let albumAnimating = false;
+    const renderAlbumPage = (node, page) => {
+      if (page.type === 'intro') node.innerHTML = '<span class="album-page__kicker">Nuestros recuerdos</span><h3 class="album-page__title">Una página a la vez.</h3><p class="album-page__note">Hay momentos pequeños que terminan ocupando un lugar enorme en el corazón.</p>';
+      if (page.type === 'end') node.innerHTML = '<span class="album-page__kicker">Fin del álbum</span><h3 class="album-page__title">Y todavía faltan muchas.</h3><p class="album-page__note">Gracias por ser mi recuerdo favorito y mi lugar seguro.</p>';
+      if (page.type === 'blank') node.innerHTML = '<span class="album-page__kicker">Siempre contigo</span><p class="album-page__note">Este libro apenas comienza.</p>';
+      if (page.type === 'memory') {
+        const item = albumData[page.index];
+        const media = item.media === 'video'
+          ? '<div class="album-photo album-video"><video controls muted loop playsinline preload="metadata" aria-label="' + item.alt + '"><source src="' + item.image + '" type="video/mp4"></video></div>'
+          : '<div class="album-photo"><img src="' + item.image + '" alt="' + item.alt + '"></div>';
+        node.innerHTML = media + '<div class="album-page__meta"><strong>' + item.label + '</strong><p>' + item.text + '</p></div>';
+        const albumImage = node.querySelector('img');
+        albumImage?.setAttribute('decoding', 'async');
+        if (albumImage && page.index < 3) albumImage.addEventListener('error', () => { albumImage.src = item.image.replace(/^album\//, ''); }, { once: true });
+      }
+    };
+    const renderAlbumSpread = (index) => {
+      albumSpreadIndex = Math.max(0, Math.min(albumSpreads.length - 1, index));
+      renderAlbumPage(leftAlbumPage, albumSpreads[albumSpreadIndex][0]);
+      renderAlbumPage(rightAlbumPage, albumSpreads[albumSpreadIndex][1]);
+      albumCounter.textContent = 'Página ' + (albumSpreadIndex + 1) + ' de ' + albumSpreads.length;
+      prevButton.disabled = albumSpreadIndex === 0;
+      nextButton.disabled = albumSpreadIndex === albumSpreads.length - 1;
+    };
+    const turnAlbumSpread = (direction) => {
+      if (albumAnimating || !albumStage.classList.contains('is-open')) return;
+      const nextIndex = albumSpreadIndex + direction;
+      if (nextIndex < 0 || nextIndex >= albumSpreads.length) return;
+      albumAnimating = true;
+      const turningContent = direction > 0 ? rightAlbumPage.innerHTML : leftAlbumPage.innerHTML;
+      albumTurn.innerHTML = turningContent;
+      renderAlbumSpread(nextIndex);
+      albumTurn.className = 'album-turn';
+      void albumTurn.offsetWidth;
+      albumTurn.className = 'album-turn ' + (direction > 0 ? 'is-next' : 'is-prev');
+      window.setTimeout(() => {
+        albumTurn.className = 'album-turn';
+        albumTurn.innerHTML = '';
+        albumAnimating = false;
+      }, 650);
+    };
+    albumCoverPanel.addEventListener('click', () => {
+      albumStage.classList.add('is-open');
+      renderAlbumSpread(0);
+      albumCoverPanel.setAttribute('aria-hidden', 'true');
+    });
+    prevButton.addEventListener('click', () => turnAlbumSpread(-1));
+    nextButton.addEventListener('click', () => turnAlbumSpread(1));
+    albumStage.querySelector('.album-spread').addEventListener('click', (event) => {
+      if (event.target.closest('a, button')) return;
+      const bounds = event.currentTarget.getBoundingClientRect();
+      turnAlbumSpread(event.clientX > bounds.left + bounds.width / 2 ? 1 : -1);
+    });
+    let albumPointerX = null;
+    albumStage.querySelector('.album-spread').addEventListener('pointerdown', (event) => { albumPointerX = event.clientX; });
+    albumStage.querySelector('.album-spread').addEventListener('pointerup', (event) => {
+      if (albumPointerX === null) return;
+      const delta = event.clientX - albumPointerX;
+      if (Math.abs(delta) > 34) turnAlbumSpread(delta < 0 ? 1 : -1);
+      albumPointerX = null;
+    });
+    renderAlbumSpread(0);
+    const useLibraryAlbum = false;
+    if (!useLibraryAlbum || !(window.St && typeof window.St.PageFlip === 'function')) {
+      flipbook.classList.add('flipbook--fallback');
+      const fallbackPages = [...flipbook.querySelectorAll('.page')];
+      let fallbackIndex = 0;
+      const showFallbackPage = (index) => {
+        fallbackIndex = Math.max(0, Math.min(fallbackPages.length - 1, index));
+        fallbackPages.forEach((item, pageIndex) => item.classList.toggle('is-active', pageIndex === fallbackIndex));
+        albumCounter.textContent = ['Portada', 'Introducción', 'Tu carita', 'El comienzo', 'Nosotros', 'Final'][fallbackIndex] || ('Página ' + (fallbackIndex + 1));
+        prevButton.disabled = fallbackIndex === 0;
+        nextButton.disabled = fallbackIndex === fallbackPages.length - 1;
+      };
+      prevButton.addEventListener('click', () => showFallbackPage(fallbackIndex - 1));
+      nextButton.addEventListener('click', () => showFallbackPage(fallbackIndex + 1));
+      let pointerStartX = null;
+      let pointerStartY = null;
+      flipbook.addEventListener('pointerdown', (event) => {
+        pointerStartX = event.clientX;
+        pointerStartY = event.clientY;
+        flipbook.setPointerCapture?.(event.pointerId);
+      });
+      flipbook.addEventListener('pointerup', (event) => {
+        if (pointerStartX === null) return;
+        const deltaX = event.clientX - pointerStartX;
+        const deltaY = event.clientY - pointerStartY;
+        const wasSwipe = Math.abs(deltaX) > 34 && Math.abs(deltaX) > Math.abs(deltaY);
+        const activePage = flipbook.querySelector('.page.is-active');
+        const pageBounds = activePage?.getBoundingClientRect();
+        const tappedRightSide = pageBounds && event.clientX > pageBounds.left + pageBounds.width / 2;
+        if (wasSwipe) showFallbackPage(fallbackIndex + (deltaX < 0 ? 1 : -1));
+        else if (activePage && !event.target.closest('a, button') && tappedRightSide) showFallbackPage(fallbackIndex + 1);
+        else if (activePage && !event.target.closest('a, button')) showFallbackPage(fallbackIndex - 1);
+        pointerStartX = null;
+        pointerStartY = null;
+      });
+      flipbook.addEventListener('pointercancel', () => { pointerStartX = null; pointerStartY = null; });
+      document.addEventListener('keydown', (event) => {
+        if (!letterOpened || !document.querySelector('.memories').matches(':focus-within')) return;
+        if (event.key === 'ArrowLeft') showFallbackPage(fallbackIndex - 1);
+        if (event.key === 'ArrowRight') showFallbackPage(fallbackIndex + 1);
+      });
+      showFallbackPage(0);
+    } else {
+    const pageFlip = new St.PageFlip(flipbook, { width: 520, height: 680, size: 'stretch', minWidth: 280, maxWidth: 760, minHeight: 380, maxHeight: 900, drawShadow: true, maxShadowOpacity: .42, showCover: true, usePortrait: true, mobileScrollSupport: true, flippingTime: 920, swipeDistance: 24, startPage: 0 });
+    pageFlip.loadFromHTML(flipbook.querySelectorAll('.page'));
+    const updateAlbumControls = (event) => {
+      const index = event?.data ?? pageFlip.getCurrentPageIndex();
+      const labels = ['Portada', 'Introducción', 'Tu carita', 'El comienzo', 'Nosotros', 'Final'];
+      albumCounter.textContent = labels[index] || ('Página ' + (index + 1));
+      prevButton.disabled = index === 0;
+      nextButton.disabled = index === flipbook.querySelectorAll('.page').length - 1;
+    };
+    pageFlip.on('flip', updateAlbumControls);
+    prevButton.addEventListener('click', () => pageFlip.flipPrev());
+    nextButton.addEventListener('click', () => pageFlip.flipNext());
+    updateAlbumControls();
+    document.addEventListener('keydown', (event) => {
+      if (!letterOpened || !document.querySelector('.memories').matches(':focus-within')) return;
+      if (event.key === 'ArrowLeft') pageFlip.flipPrev();
+      if (event.key === 'ArrowRight') pageFlip.flipNext();
+    });
+    }
+
+    /* Physical album based on the supplied two-face leaf model. */
+    const realStage = document.createElement('div');
+    realStage.className = 'real-album-stage';
+    realStage.innerHTML = '<div class="real-album-wrap"><div class="real-album" aria-label="Libro de fotos"><div class="real-album__board real-album__board--left"></div><div class="real-album__board real-album__board--right"></div><div class="real-album__leaves"></div></div></div>';
+    albumShell.append(realStage);
+    const realBook = realStage.querySelector('.real-album');
+    const realLeaves = realStage.querySelector('.real-album__leaves');
+    const realPages = [
+      { type: 'cover' },
+      { type: 'intro' },
+      ...albumData.map((item, index) => ({ type: 'memory', index })),
+      { type: 'end' },
+      { type: 'back' }
+    ];
+    const realLeafCount = realPages.length / 2;
+    let realCurrent = 0;
+    let realTarget = 0;
+    let realStepping = false;
+    const realPageMarkup = (item) => {
+      if (item.type === 'cover') return '<div class="real-page real-page--cover"><div class="real-page__content"><strong class="real-page__title">Álbum<br>de fotos</strong><p class="real-page__note">Nuestros recuerdos, una página a la vez</p></div></div>';
+      if (item.type === 'intro') return '<div class="real-page real-page--intro"><span class="real-page__kicker">Nuestros recuerdos</span><h3 class="real-page__title">Una página a la vez.</h3><p class="real-page__note">Hay momentos pequeños que terminan ocupando un lugar enorme en el corazón.</p></div>';
+      if (item.type === 'end') return '<div class="real-page real-page--end"><span class="real-page__kicker">Fin del álbum</span><h3 class="real-page__title">Y todavía faltan muchas.</h3><p class="real-page__note">Gracias por ser mi recuerdo favorito y mi lugar seguro.</p></div>';
+      if (item.type === 'back') return '<div class="real-page real-page--back"><h3 class="real-page__title">Con amor,<br>siempre.</h3></div>';
+      const media = albumData[item.index];
+      const visual = media.media === 'video'
+        ? '<video controls muted loop playsinline preload="metadata" aria-label="' + media.alt + '"><source src="' + media.image + '" type="video/mp4"></video>'
+        : '<img src="' + media.image + '" alt="' + media.alt + '" loading="eager" decoding="async">';
+      const videoClass = media.media === 'video' ? ' real-page--video' : '';
+      const meta = media.media === 'video' ? '' : '<div class="real-page__meta"><strong>' + media.label + '</strong><p>' + media.text + '</p></div>';
+      return '<div class="real-page real-page--memory' + videoClass + '"><div class="real-page__photo">' + visual + '</div>' + meta + '</div>';
+    };
+    const realZ = (index, flipped) => flipped ? index : realLeafCount - index;
+    realPages.forEach((item, index) => {
+      if (index % 2 !== 0) return;
+      const leaf = document.createElement('div');
+      leaf.className = 'real-album__leaf';
+      if (index === 0) leaf.classList.add('is-cover-leaf');
+      if (index === realPages.length - 2) leaf.classList.add('is-back-leaf');
+      leaf.innerHTML = '<div class="real-album__face real-album__face--front">' + realPageMarkup(realPages[index]) + '</div><div class="real-album__face real-album__face--back">' + realPageMarkup(realPages[index + 1]) + '</div>';
+      leaf.style.zIndex = realZ(index / 2, false);
+      realLeaves.append(leaf);
+    });
+    const realLeafNodes = [...realLeaves.children];
+    const updateRealAlbum = () => {
+      realBook.classList.toggle('is-open', realCurrent > 0 && realCurrent < realLeafCount);
+      realBook.classList.toggle('is-at-start', realCurrent === 0);
+      realBook.classList.toggle('is-at-end', realCurrent === realLeafCount);
+      prevButton.disabled = realCurrent === 0;
+      nextButton.disabled = realCurrent === realLeafCount;
+      albumCounter.textContent = realCurrent === 0 ? 'Portada' : realCurrent === realLeafCount ? 'Contraportada' : 'Página ' + realCurrent + ' de ' + (realLeafCount - 1);
+    };
+    const flipRealLeaf = (index, flipped) => {
+      const leaf = realLeafNodes[index];
+      if (!leaf) return;
+      leaf.style.zIndex = 500;
+      leaf.classList.toggle('is-flipped', flipped);
+      leaf.classList.add('is-turning');
+      window.setTimeout(() => leaf.classList.remove('is-turning'), 680);
+      window.setTimeout(() => { leaf.style.zIndex = realZ(index, flipped); }, 700);
+    };
+    const stepRealAlbum = () => {
+      if (realCurrent === realTarget) { realStepping = false; return; }
+      realStepping = true;
+      if (realCurrent < realTarget) { flipRealLeaf(realCurrent, true); realCurrent += 1; }
+      else { realCurrent -= 1; flipRealLeaf(realCurrent, false); }
+      updateRealAlbum();
+      window.setTimeout(stepRealAlbum, realCurrent === realTarget ? 0 : 120);
+    };
+    const setRealTarget = (target) => { realTarget = Math.max(0, Math.min(realLeafCount, target)); if (!realStepping) stepRealAlbum(); };
+    prevButton.addEventListener('click', () => setRealTarget(realTarget - 1));
+    nextButton.addEventListener('click', () => setRealTarget(realTarget + 1));
+    realBook.addEventListener('click', (event) => {
+      if (event.target.closest('a,button,video')) return;
+      const bounds = realBook.getBoundingClientRect();
+      setRealTarget(realTarget + (event.clientX > bounds.left + bounds.width / 2 ? 1 : -1));
+    });
+    let realTouchX = null;
+    realBook.addEventListener('pointerdown', (event) => { realTouchX = event.clientX; });
+    realBook.addEventListener('pointerup', (event) => {
+      if (realTouchX === null) return;
+      const delta = event.clientX - realTouchX;
+      if (Math.abs(delta) > 40) setRealTarget(realTarget + (delta < 0 ? 1 : -1));
+      realTouchX = null;
+    });
+    document.addEventListener('keydown', (event) => {
+      if (!letterOpened) return;
+      if (event.key === 'ArrowLeft') setRealTarget(realTarget - 1);
+      if (event.key === 'ArrowRight') setRealTarget(realTarget + 1);
+    });
+    updateRealAlbum();
+  </script>
 </body>
 </html>
-
