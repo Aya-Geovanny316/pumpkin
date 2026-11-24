@@ -61,8 +61,8 @@ app.appendChild(coverButton);
 const minimizeButton = document.createElement('button');
 minimizeButton.type = 'button';
 minimizeButton.className = 'minimize-tulips';
-minimizeButton.textContent = 'Minimizar';
-minimizeButton.setAttribute('aria-label', 'Minimizar jardín de tulipanes');
+minimizeButton.textContent = '×';
+minimizeButton.setAttribute('aria-label', 'Cerrar pantalla completa');
 app.appendChild(minimizeButton);
 const coverAscii = coverButton.querySelector<HTMLCanvasElement>('.cover-ascii')!;
 const coverContext = coverAscii.getContext('2d')!;
@@ -404,6 +404,7 @@ const expandTulips = () => {
   canvas.style.opacity = '0';
   document.body.classList.add('tulips-modal-open');
   app.classList.add('is-fullscreen');
+  void app.requestFullscreen?.().catch(() => undefined);
   minimizeButton.hidden = false;
   bouquetBuilding = true;
   bouquetBuildStartedAt = performance.now();
@@ -604,7 +605,7 @@ soundButton.addEventListener('click', async () => {
 });
 restartButton.addEventListener('click', restart);
 fullscreenButton.addEventListener('click', async () => {
-  if (!document.fullscreenElement) await document.documentElement.requestFullscreen?.();
+  if (!document.fullscreenElement) await app.requestFullscreen?.();
   else await document.exitFullscreen?.();
 });
 
