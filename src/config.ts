@@ -18,7 +18,7 @@ export const CONFIG = {
     signature: 'Para ti, siempre.'
   },
   easterEgg: { initials: 'M.F.', tripleTapWindow: 1.45 },
-  music: { file: 'media/congratulations.mp3', volume: 0.18, lyricsOffset: 0 },
+  music: { file: 'media/audio/congratulations.mp3', volume: 0.18, lyricsOffset: 0 },
   quality: { maxPixelRatio: 1.35, lowPowerColumns: 92 }
 } as const;
 

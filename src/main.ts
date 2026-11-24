@@ -78,12 +78,12 @@ lyricsVideo.loop = false;
 lyricsVideo.playsInline = true;
 lyricsVideo.preload = 'metadata';
 lyricsVideo.setAttribute('aria-hidden', 'true');
-lyricsVideo.src = assetUrl('media/Recuerdos_cronologico.mp4');
+lyricsVideo.src = assetUrl('media/videos/Recuerdos_cronologico.mp4');
 lyricsVideo.hidden = true;
 app.appendChild(lyricsVideo);
 const lyricsEndingImage = document.createElement('img');
 lyricsEndingImage.className = 'lyrics-ending-image';
-lyricsEndingImage.src = assetUrl('media/WhatsApp Image 2026-11-24 at 5.33.45 AM.jpeg');
+lyricsEndingImage.src = assetUrl('media/images/WhatsApp Image 2026-11-24 at 5.33.45 AM.jpeg');
 lyricsEndingImage.alt = '';
 lyricsEndingImage.setAttribute('aria-hidden', 'true');
 lyricsEndingImage.hidden = true;
@@ -109,9 +109,9 @@ let flowerReady = false;
 let bouquetBuilding = false;
 let bouquetBuildStartedAt = 0;
 const coverSource = new Image();
-coverSource.src = assetUrl('media/congratulations.jpg');
+coverSource.src = assetUrl('media/images/congratulations.jpg');
 const flowerSource = new Image();
-flowerSource.src = assetUrl('media/tulip-bouquet-reference.png');
+flowerSource.src = assetUrl('media/images/tulip-bouquet-reference.png');
 
 const paintReferenceBouquet = () => {
   if (!flowerSource.complete || !flowerSource.naturalWidth) return;
@@ -425,6 +425,11 @@ const expandTulips = () => {
 const minimizeTulips = () => {
   document.body.classList.remove('tulips-modal-open');
   app.classList.remove('is-fullscreen');
+  if (!app.classList.contains('is-playing')) {
+    lyricsVideo.pause();
+    lyricsVideo.hidden = true;
+    lyricsEndingImage.hidden = true;
+  }
   minimizeButton.hidden = true;
   if (tulipHome) tulipHome.append(app);
   if (document.fullscreenElement) void document.exitFullscreen?.();

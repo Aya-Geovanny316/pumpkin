@@ -3,12 +3,12 @@
 
   const CONFIG = window.MI_CALABACITA_EXPERIENCES = {
     characters: {
-      coco: { name: 'Coco', image: 'album/coco.png', color: '#f4c27b', accent: '#78b8ca', birthday: [2, 12] },
-      nacho: { name: 'Nacho', image: 'album/nacho.png', color: '#d8b4e8', accent: '#f2b7c5', birthday: [2, 19] }
+      coco: { name: 'Coco', image: 'media/images/coco.png', color: '#f4c27b', accent: '#78b8ca', birthday: [2, 12] },
+      nacho: { name: 'Nacho', image: 'media/images/nacho.png', color: '#d8b4e8', accent: '#f2b7c5', birthday: [2, 19] }
     },
     gifts: [
       { id: 'letter', icon: '✉', title: 'Una carta para ti', type: 'letter', text: 'Desde que llegaste a mi vida, cada día se siente como una canción bonita. Gracias por ser tú.' },
-      { id: 'photo', icon: '▧', title: 'Un recuerdo sorpresa', type: 'photo', image: 'album/pumpkin.jpeg', text: 'Siempre sonrío cuando te veo.' },
+      { id: 'photo', icon: '▧', title: 'Un recuerdo sorpresa', type: 'photo', image: 'media/images/pumpkin.jpeg', text: 'Siempre sonrío cuando te veo.' },
       { id: 'date', icon: '♡', title: 'Vale por una cita sorpresa', type: 'voucher', text: 'Canjeable por una tarde planeada especialmente para ti.' },
       { id: 'movies', icon: '▱', title: 'Vale por películas', type: 'voucher', text: 'Una tarde de películas, cobijita y algo rico para compartir.' },
       { id: 'stars', icon: '✦', title: 'Mensaje secreto', type: 'special', text: 'No importa qué tan lejos esté, siempre quisiera compartir el cielo contigo.' },
