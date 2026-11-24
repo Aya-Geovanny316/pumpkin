@@ -71,6 +71,21 @@ morphCanvas.className = 'tulip-morph';
 morphCanvas.setAttribute('aria-hidden', 'true');
 app.appendChild(morphCanvas);
 const morphContext = morphCanvas.getContext('2d')!;
+const lyricsVideo = document.createElement('video');
+lyricsVideo.className = 'lyrics-video-backdrop';
+lyricsVideo.muted = true;
+lyricsVideo.loop = true;
+lyricsVideo.playsInline = true;
+lyricsVideo.preload = 'metadata';
+lyricsVideo.setAttribute('aria-hidden', 'true');
+lyricsVideo.src = assetUrl('media/Recuerdos_cronologico.mp4');
+lyricsVideo.hidden = true;
+app.appendChild(lyricsVideo);
+const lyricsVideoShade = document.createElement('div');
+lyricsVideoShade.className = 'lyrics-video-shade';
+lyricsVideoShade.setAttribute('aria-hidden', 'true');
+lyricsVideoShade.hidden = true;
+app.appendChild(lyricsVideoShade);
 coverAscii.style.opacity = '0';
 const bouquetAscii = document.createElement('canvas');
 bouquetAscii.className = 'reference-bouquet-ascii';
@@ -420,6 +435,11 @@ const startSong = async () => {
   soundButton.classList.add('is-active');
   gsap.to(ambient, { volume: CONFIG.music.volume, duration: 1.8 });
   app.classList.add('is-playing');
+  bouquetAscii.hidden = true;
+  lyricsVideo.currentTime = 0;
+  lyricsVideo.hidden = false;
+  lyricsVideoShade.hidden = false;
+  void lyricsVideo.play().catch(() => undefined);
   gsap.to(morphCanvas, { opacity: 0, duration: 1.2, ease: 'power2.inOut', onComplete: () => { morphCanvas.hidden = true; } });
   gsap.to(coverButton, { opacity: 0, duration: 1.2, ease: 'power2.inOut', onComplete: () => { coverButton.hidden = true; } });
   gsap.to('.dedication', { opacity: 0, duration: 0.8 });
@@ -486,6 +506,10 @@ const restart = () => {
   lyricsLayer.hidden = true;
   lyricsLayer.textContent = '';
   lyricsAsciiCanvas.hidden = true;
+  lyricsVideo.pause();
+  lyricsVideo.currentTime = 0;
+  lyricsVideo.hidden = true;
+  lyricsVideoShade.hidden = true;
   if (dedicationLine) dedicationLine.textContent = CONFIG.dedication.line;
   if (dedicationSignature) dedicationSignature.textContent = CONFIG.dedication.signature;
   ambient.pause();
@@ -572,9 +596,10 @@ soundButton.addEventListener('click', async () => {
   if (!CONFIG.music.file) return;
   if (soundOn) {
     await ambient.play().catch(() => undefined);
+    if (app.classList.contains('is-playing')) void lyricsVideo.play().catch(() => undefined);
     gsap.to(ambient, { volume: CONFIG.music.volume, duration: 1.8 });
   } else {
-    gsap.to(ambient, { volume: 0, duration: 0.8, onComplete: () => ambient.pause() });
+    gsap.to(ambient, { volume: 0, duration: 0.8, onComplete: () => { ambient.pause(); lyricsVideo.pause(); } });
   }
 });
 restartButton.addEventListener('click', restart);

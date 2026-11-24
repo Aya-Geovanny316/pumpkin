@@ -56,6 +56,33 @@ body.tulips-modal-open #eternal-tulips-app .lyrics-layer {
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, .78));
 }
 
+#eternal-tulips-app .lyrics-video-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .42;
+  filter: saturate(.78) brightness(.48) contrast(1.04);
+  pointer-events: none;
+}
+
+#eternal-tulips-app .lyrics-video-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: rgba(0, 0, 0, .28);
+}
+
+#eternal-tulips-app .lyrics-video-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .28);
+}
+
 #eternal-tulips-app .tulip-morph {
   position: absolute;
   inset: 0;
