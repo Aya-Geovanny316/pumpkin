@@ -1,0 +1,73 @@
+#eternal-tulips-app .album-reveal span {
+  left: 50%;
+  top: 50%;
+  bottom: -58px;
+  top: auto;
+  width: max-content;
+  transform: translate(-50%, 0);
+  padding: 10px 16px;
+  background: #000;
+  border: 1px solid rgba(255, 182, 217, .5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+  color: #fff4f8;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 12;
+}
+
+#eternal-tulips-app .album-reveal span {
+  display: none !important;
+}
+
+body.tulips-modal-open #eternal-tulips-app .album-reveal span {
+  position: fixed;
+  left: 50%;
+  top: auto;
+  bottom: 96px;
+  transform: translateX(-50%);
+}
+
+#eternal-tulips-app .album-reveal {
+  overflow: visible;
+}
+
+#eternal-tulips-app.is-fullscreen {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 1000;
+  width: 100vw !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  margin: 0 !important;
+  transform: none !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+#eternal-tulips-app.is-fullscreen .dedication {
+  left: 50%;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  width: min(720px, 84vw);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#eternal-tulips-app.is-fullscreen:not(.is-cover-visible) .intro-mark,
+#eternal-tulips-app.is-fullscreen:not(.is-cover-visible) .dedication,
+#eternal-tulips-app.is-fullscreen:not(.is-cover-visible) .interaction-hint,
+#eternal-tulips-app.is-fullscreen:not(.is-cover-visible) .controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#eternal-tulips-app.is-cover-visible #ascii-canvas {
+  transition: opacity 2.25s ease;
+}
+
+#eternal-tulips-app.is-fullscreen .lyrics-layer {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

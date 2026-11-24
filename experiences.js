@@ -44,12 +44,16 @@
 
   const html = '<section class="experiences" id="surprises" aria-labelledby="experiences-title">' +
     '<div class="experiences__inner"><div class="experiences__heading"><h2 id="experiences-title">Pequeños mundos para volver.</h2><p>Tres rincones hechos para descubrir algo nuevo cada vez que regreses a Mi calabacita.</p></div>' +
-    '<nav class="experience-nav" aria-label="Sorpresas"><button type="button" data-experience-tab="world" aria-selected="true">Coco y Nacho</button><button type="button" data-experience-tab="coloring" aria-selected="false">Nuestro libro para colorear</button></nav>' +
+    '<nav class="experience-nav" aria-label="Sorpresas"><button class="tulip-tab" type="button" data-experience-tab="tulips" aria-selected="false"><span class="tulip-tab-icon" aria-hidden="true"></span><span>Florecitas para ti</span></button><button type="button" data-experience-tab="world" aria-selected="true">Coco y Nacho</button><button type="button" data-experience-tab="coloring" aria-selected="false">Nuestro libro para colorear</button></nav>' +
+    '<section class="experience-panel" data-experience-panel="tulips" hidden><div class="tulip-slot"></div></section>' +
     '<section class="experience-panel" data-experience-panel="world"><div class="experience-panel__head"><h3>El pequeño mundo de Coco y Nacho</h3><p>Toca a cada personaje para saludarlo y descubrir sus pequeñas reacciones.</p></div><div class="world"><div class="world__sun"></div><div class="world__stars">✦　✧　✦</div><div class="world__house"></div><div class="world__flowers">✿　✿</div><div class="world__message" aria-live="polite"></div><div class="world__characters"><button class="world-character" type="button" data-character="coco" aria-label="Tocar a Coco">' + characterArt(CONFIG.characters.coco) + '<span class="world-character__name">Coco</span><span class="world-character__hint" data-birthday="coco">12 de febrero</span></button><button class="world-character" type="button" data-character="nacho" aria-label="Tocar a Nacho">' + characterArt(CONFIG.characters.nacho) + '<span class="world-character__name">Nacho</span><span class="world-character__hint" data-birthday="nacho">19 de febrero</span></button></div></div></section>' +
     '' +
     '<section class="experience-panel" data-experience-panel="coloring" hidden><div class="experience-panel__head"><h3>Un mundito para colorear contigo ♡</h3><p>Elige un color y toca una zona. También puedes dibujar libremente con el pincel.</p></div><div class="coloring-layout"><div class="color-book"><div data-color-pages></div><div class="color-book__caption"><span data-color-title></span><span data-color-status></span></div><div class="page-nav"><button type="button" data-color-prev>‹ Anterior</button><span data-color-count></span><button type="button" data-color-next>Siguiente ›</button></div></div><aside class="color-tools" aria-label="Herramientas para colorear"><h4>Colores y herramientas</h4><div class="color-palette" data-color-palette></div><div class="tool-row"><button type="button" data-tool="fill" class="is-active">Rellenar</button><button type="button" data-tool="brush">Pincel</button><button type="button" data-tool="eraser">Borrador</button></div><div class="tool-row"><button type="button" data-tool-size="5">Fino</button><button type="button" data-tool-size="14">Medio</button><button type="button" data-tool-size="26">Grueso</button></div><div class="tool-row"><button type="button" data-color-undo>Deshacer</button><button type="button" data-color-redo>Rehacer</button><button type="button" data-color-save>Guardar</button><button type="button" data-color-export>Descargar PNG</button><button type="button" data-color-reset>Reiniciar</button></div><p class="color-status" data-color-tool-status>Selecciona una zona para comenzar.</p><p class="color-note">Tu progreso se guarda localmente en este dispositivo. La colaboración entre dispositivos requiere un backend en tiempo real.</p><div class="coloring-surprise" data-color-surprise hidden></div></aside></div></section></div></section>';
   music.insertAdjacentHTML('beforebegin', html);
   const experienceRoot = root.querySelector('.experiences');
+  const tulipApp = document.querySelector('#eternal-tulips-app');
+  const tulipSlot = experienceRoot.querySelector('.tulip-slot');
+  if (tulipApp && tulipSlot) tulipSlot.append(tulipApp);
 
   const tabs = [...experienceRoot.querySelectorAll('[data-experience-tab]')];
   const panels = [...experienceRoot.querySelectorAll('[data-experience-panel]')];
@@ -57,6 +61,12 @@
     const id = tab.dataset.experienceTab;
     tabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
     panels.forEach(panel => { panel.hidden = panel.dataset.experiencePanel !== id; });
+    if (id === 'tulips') {
+      const tulipPanel = experienceRoot.querySelector('[data-experience-panel="tulips"]');
+      const tulipApp = document.querySelector('#eternal-tulips-app');
+      if (tulipPanel) tulipPanel.hidden = false;
+      if (tulipApp) tulipApp.dispatchEvent(new CustomEvent('expand-tulips'));
+    }
   }));
 
   const world = experienceRoot.querySelector('.world');
