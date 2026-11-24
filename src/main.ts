@@ -35,6 +35,7 @@ const tulips = TULIPS.slice(0, CONFIG.tulipCount).map((config, index) => {
 });
 
 const ambient = document.querySelector<HTMLAudioElement>('#ambient-audio')!;
+ambient.loop = false;
 if (CONFIG.music.file) ambient.src = assetUrl(CONFIG.music.file);
 const soundButton = document.querySelector<HTMLButtonElement>('#sound-toggle')!;
 const restartButton = document.querySelector<HTMLButtonElement>('#restart')!;

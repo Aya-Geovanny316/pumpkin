@@ -62,7 +62,7 @@ body.tulips-modal-open #eternal-tulips-app .lyrics-layer {
   z-index: 3;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: .72;
   filter: saturate(.92) brightness(.72) contrast(1.04);
   pointer-events: none;
@@ -74,7 +74,7 @@ body.tulips-modal-open #eternal-tulips-app .lyrics-layer {
   z-index: 3;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   opacity: .78;
   filter: saturate(.92) brightness(.72) contrast(1.04);
   pointer-events: none;
