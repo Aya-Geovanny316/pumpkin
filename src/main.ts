@@ -74,13 +74,20 @@ const morphContext = morphCanvas.getContext('2d')!;
 const lyricsVideo = document.createElement('video');
 lyricsVideo.className = 'lyrics-video-backdrop';
 lyricsVideo.muted = true;
-lyricsVideo.loop = true;
+lyricsVideo.loop = false;
 lyricsVideo.playsInline = true;
 lyricsVideo.preload = 'metadata';
 lyricsVideo.setAttribute('aria-hidden', 'true');
 lyricsVideo.src = assetUrl('media/Recuerdos_cronologico.mp4');
 lyricsVideo.hidden = true;
 app.appendChild(lyricsVideo);
+const lyricsEndingImage = document.createElement('img');
+lyricsEndingImage.className = 'lyrics-ending-image';
+lyricsEndingImage.src = assetUrl('media/WhatsApp Image 2026-11-24 at 5.33.45 AM.jpeg');
+lyricsEndingImage.alt = '';
+lyricsEndingImage.setAttribute('aria-hidden', 'true');
+lyricsEndingImage.hidden = true;
+app.appendChild(lyricsEndingImage);
 const lyricsVideoShade = document.createElement('div');
 lyricsVideoShade.className = 'lyrics-video-shade';
 lyricsVideoShade.setAttribute('aria-hidden', 'true');
@@ -439,6 +446,7 @@ const startSong = async () => {
   bouquetAscii.hidden = true;
   lyricsVideo.currentTime = 0;
   lyricsVideo.hidden = false;
+  lyricsEndingImage.hidden = true;
   lyricsVideoShade.hidden = false;
   void lyricsVideo.play().catch(() => undefined);
   gsap.to(morphCanvas, { opacity: 0, duration: 1.2, ease: 'power2.inOut', onComplete: () => { morphCanvas.hidden = true; } });
@@ -510,6 +518,7 @@ const restart = () => {
   lyricsVideo.pause();
   lyricsVideo.currentTime = 0;
   lyricsVideo.hidden = true;
+  lyricsEndingImage.hidden = true;
   lyricsVideoShade.hidden = true;
   if (dedicationLine) dedicationLine.textContent = CONFIG.dedication.line;
   if (dedicationSignature) dedicationSignature.textContent = CONFIG.dedication.signature;
@@ -519,6 +528,10 @@ const restart = () => {
   tulips.forEach(tulip => setTulipGrowth(tulip, 0));
   bloomTimeline();
 };
+lyricsVideo.addEventListener('ended', () => {
+  lyricsVideo.hidden = true;
+  lyricsEndingImage.hidden = false;
+});
 
 const spawnBurst = (tulip: Tulip, count = 18) => {
   const world = new THREE.Vector3();

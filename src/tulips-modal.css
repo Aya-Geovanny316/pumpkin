@@ -68,6 +68,18 @@ body.tulips-modal-open #eternal-tulips-app .lyrics-layer {
   pointer-events: none;
 }
 
+#eternal-tulips-app .lyrics-ending-image {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .78;
+  filter: saturate(.92) brightness(.72) contrast(1.04);
+  pointer-events: none;
+}
+
 #eternal-tulips-app .lyrics-video-shade {
   position: absolute;
   inset: 0;
