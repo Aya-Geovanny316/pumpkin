@@ -620,7 +620,7 @@ const animate = () => {
   const delta = Math.min(0.05, (now - lastTime) / 1000);
   lastTime = now;
   time.value = clock.getElapsedTime();
-  if (!coverShown && now - introStartedAt > 10000) showAlbumCover();
+  if (!coverShown && now - introStartedAt > 15000) showAlbumCover();
   if (bouquetBuilding) renderReferenceBouquet();
   drawMorph(now);
   bouquet.rotation.y += ((pointerX * CONFIG.motion.parallax) - bouquet.rotation.y) * delta * 3;
