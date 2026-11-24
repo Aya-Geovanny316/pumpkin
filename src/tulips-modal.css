@@ -118,7 +118,10 @@ body.tulips-modal-open #eternal-tulips-app .lyrics-layer {
 #eternal-tulips-app .album-reveal[hidden],
 #eternal-tulips-app .tulip-morph[hidden],
 #eternal-tulips-app .minimize-tulips[hidden],
-#eternal-tulips-app .lyrics-layer[hidden] {
+#eternal-tulips-app .lyrics-layer[hidden],
+#eternal-tulips-app .lyrics-video-backdrop[hidden],
+#eternal-tulips-app .lyrics-ending-image[hidden],
+#eternal-tulips-app .lyrics-video-shade[hidden] {
   display: none !important;
 }
 
